@@ -1,25 +1,39 @@
 <head>
-  <title>app</title>
+  <title>HawaiiAlert</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+  {{> interface}}
 </body>
 
-<template name="hello">
+<template name="interface">
+</template>
+
+<template name="load">
+  {{>Template.dynamic template=stage}}
+</template>
+
+<template name="drill">
+  <h1>Is this a drill?</h1>
+  <a id="drill" class="ui button">Drill</a>
+  <a id="not_drill" class="ui button">NOT A DRILL</a>
+</template>
+
+<template name="disaster">
+  <h1>What is the nature of the disaster?</h1>
+  <a id="missile" class="ui button">Missile</a>
+</template>
+
+<template name="location">
+  <h1>What areas will this affect?</h1>
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="alerts">
+  <h1>What alerts should be sent?</h1>
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
 </template>

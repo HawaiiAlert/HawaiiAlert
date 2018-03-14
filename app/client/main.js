@@ -1,22 +1,41 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+var stage = "drill";
+var selection = {
+  "drill": null,
+  "disaster": null,
+  "location": null,
+  "alerts": {
+    "text": false
+    }
+  };
+
+Template.interface.onCreated(function onCreated(){
+  BlazeLayout.render('load', {"stage":stage});
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
+Template.drill.events({
+  'click #drill'(event, instance) {
+    stage="disaster";
+    selection.drill="Drill";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #not_drill'(event, instance) {
+    stage="disaster";
+    selection.drill="Not a Drill";
+    BlazeLayout.render('load', {"stage":stage});
   },
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+Template.disaster.events({
+  'click #missile'(event, instance) {
+    stage="location";
+    selection.disaster="Missile";
+    BlazeLayout.render('load', {"stage":stage});
   },
 });
