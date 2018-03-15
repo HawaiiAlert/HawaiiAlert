@@ -39,3 +39,11 @@ Template.disaster.events({
     BlazeLayout.render('load', {"stage":stage});
   },
 });
+
+Template.location.events({
+    'click #honolulu'(event, instance) {
+        stage="alerts";
+        selection.disaster="honolulu";
+        BlazeLayout.render('load', {"stage":stage});
+    },
+});

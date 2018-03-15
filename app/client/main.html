@@ -11,29 +11,90 @@
 <template name="interface">
 </template>
 
+
 <template name="load">
   {{>Template.dynamic template=stage}}
 </template>
 
+
 <template name="drill">
-  <h1>Is this a drill?</h1>
-  <a id="drill" class="ui button">Drill</a>
-  <a id="not_drill" class="ui button">NOT A DRILL</a>
+  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+  <h1 style="text-align: center">Is this a drill?</h1>
+  <div style="text-align: center">
+    <a id="drill" class="ui button" style="background-color: yellow;width: 130px">Drill</a>
+    <a id="not_drill" class="ui button" style="width:130px;background-color: red;margin-left: 10%">NOT A DRILL</a>
+  </div>
+  </div>
 </template>
+
 
 <template name="disaster">
-  <h1>What is the nature of the disaster?</h1>
-  <a id="missile" class="ui button">Missile</a>
+  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+  <h1 style="text-align: center">What is the nature of the disaster?</h1>
+  <div class="ui centered grid" >
+    <div class="row">
+      <a id="missile" style="width: 130px" class="ui column button">Missile</a>
+      <a style="width: 130px;margin-left: 5%" class="ui column button">Missile</a>
+    </div>
+    <div class="row" >
+      <a style="width: 130px" class="ui column button">Missile</a>
+      <a style="width: 130px;margin-left: 5%" class="ui column button">Missile</a>
+    </div>
+    <div class="row">
+      <a style="width: 130px" class="ui column button">Missile</a>
+      <a style="width: 130px;margin-left: 5%" class="ui column button">Missile</a>
+    </div>
+    <div class="row">
+      <a style="width: 130px" class="ui column button">Missile</a>
+      <a style="width: 130px;margin-left: 5%" class="ui column button">Missile</a>
+    </div>
+  </div>
+  </div>
 </template>
+
 
 <template name="location">
-  <h1>What areas will this affect?</h1>
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+  <h1 style="text-align: center">What areas will this affect?</h1>
+    <div class="ui centered grid">
+      <a id="honolulu" class="ui button">Honolulu</a>
+    </div>
+  </div>
 </template>
 
+
 <template name="alerts">
-  <h1>What alerts should be sent?</h1>
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+  <h1 style="text-align: center">What alerts should be sent?</h1>
+  <div class="ui centered grid">
+    <div class="row">
+    <div style="width: 150px" class="ui checkbox">
+      <input type="checkbox" id="text">
+      <label >Text Alert</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="tv">
+      <label>TV Alert</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="radio">
+      <label>Radio Alert</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="siren">
+      <label>Warning Sirens</label>
+    </div>
+    </div>
+    <div class="row">
+      <a class="ui button red">submit</a>
+      <a class="ui button">back</a>
+    </div>
+  </div>
+  </div>
 </template>
