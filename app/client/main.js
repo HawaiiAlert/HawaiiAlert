@@ -4,18 +4,39 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 import './main.html';
 
-var stage = "drill";
+/*The following will store options, the page will then generate based on them, allowing new options to be added quickly*/
+/*
+var options = {
+  "drill" = {},
+  "disaster" = {},
+  "locations" = {},
+  "alerts" = {},
+};
+*/
+var stage = null;
+/*The following stores the user's selections from the interface*/
 var selection = {
   "drill": null,
   "disaster": null,
-  "locations": null,
+  "locations": [],
   "alerts": []
   };
 
+
+/////Interface/////
 Template.interface.onCreated(function onCreated(){
+  stage = "drill";
+  selection = {
+    "drill": null,
+    "disaster": null,
+    "locations": [],
+    "alerts": []
+    };
   BlazeLayout.render('load', {"stage":stage});
 });
 
+
+/////Drill/////
 Template.drill.events({
   'click #drill'(event, instance) {
     stage="disaster";
@@ -29,6 +50,8 @@ Template.drill.events({
   },
 });
 
+
+/////Disaster/////
 Template.disaster.events({
   'click #missile'(event, instance) {
     stage="location";
@@ -37,14 +60,18 @@ Template.disaster.events({
   },
 });
 
+
+/////Location/////
 Template.location.events({
   'click #honolulu'(event, instance) {
     stage="alerts";
-    selection.location="Honolulu";
+    selection.locations.push("Honolulu");
     BlazeLayout.render('load', {"stage":stage});
   },
 });
 
+
+/////Alerts/////
 Template.alerts.events({
   'click #submit'(event, instance) {
     stage="summary";
@@ -69,17 +96,34 @@ Template.alerts.events({
   },
 });
 
+
+/////Summary/////
 Template.summary.helpers({
-  disaster(){
-    return selection.disaster;
-  },
   drill(){
     return selection.drill;
   },
-  location(){
-    return selection.location;
+  disaster(){
+    return selection.disaster;
+  },
+  locations(){
+    return selection.locations;
   },
   alerts(){
     return selection.alerts;
   }
-})
+});
+
+Template.summary.events({
+  'click #confirm'(event, instance) {
+    stage="confirmation";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #cancel'(event, instance) {
+    stage="drill";
+    selection.drill=null;
+    selection.disaster=null;
+    selection.locations=[];
+    selection.alerts=[];
+    BlazeLayout.render('load', {"stage":stage});
+  },
+});

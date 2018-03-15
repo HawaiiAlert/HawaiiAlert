@@ -4,9 +4,11 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
 </head>
 
+
 <body>
   {{> interface}}
 </body>
+
 
 <template name="interface">
 </template>
@@ -93,12 +95,13 @@
   </div>
 </template>
 
+
 <template name="summary">
   <h1>Summary</h1>
   <p> You are issuing an alert for: <strong>{{disaster}}</strong></p>
   <p> This alert is: <strong>{{drill}}</strong></p>
-  <p> The alert is for the following areas: <strong>{{location}}</strong></p>
+  <p> The alert is for the following areas: <strong>{{locations}}</strong></p>
   <p> The alert will be sent by: <strong>{{alerts}}</strong></p>
-  <a>Confirm</a>
-  <a>Cancel</a>
+  <a id="confirm">Confirm</a>
+  <a id="cancel">Cancel</a>
 </template>
