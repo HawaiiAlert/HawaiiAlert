@@ -13,23 +13,22 @@
 
 
 <template name="load">
-  {{>Template.dynamic template=stage}}
+  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+    {{>Template.dynamic template=stage}}
+  </div>
 </template>
 
 
 <template name="drill">
-  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
   <h1 style="text-align: center">Is this a drill?</h1>
   <div style="text-align: center">
     <a id="drill" class="ui button" style="background-color: yellow;width: 130px">Drill</a>
     <a id="not_drill" class="ui button" style="width:130px;background-color: red;margin-left: 10%">NOT A DRILL</a>
   </div>
-  </div>
 </template>
 
 
 <template name="disaster">
-  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
   <h1 style="text-align: center">What is the nature of the disaster?</h1>
   <div class="ui centered grid" >
     <div class="row">
@@ -49,22 +48,18 @@
       <a style="width: 130px;margin-left: 5%" class="ui column button">Missile</a>
     </div>
   </div>
-  </div>
 </template>
 
 
 <template name="location">
-  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
   <h1 style="text-align: center">What areas will this affect?</h1>
-    <div class="ui centered grid">
-      <a id="honolulu" class="ui button">Honolulu</a>
-    </div>
+  <div class="ui centered grid">
+    <a id="honolulu" class="ui button">Honolulu</a>
   </div>
 </template>
 
 
 <template name="alerts">
-  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
   <h1 style="text-align: center">What alerts should be sent?</h1>
   <div class="ui centered grid">
     <div class="row">
@@ -92,9 +87,18 @@
     </div>
     </div>
     <div class="row">
-      <a class="ui button red">submit</a>
-      <a class="ui button">back</a>
+      <a class="ui button red" id="submit">Submit</a>
+      <a class="ui button" id="back">Back</a>
     </div>
   </div>
-  </div>
+</template>
+
+<template name="summary">
+  <h1>Summary</h1>
+  <p> You are issuing an alert for: <strong>{{disaster}}</strong></p>
+  <p> This alert is: <strong>{{drill}}</strong></p>
+  <p> The alert is for the following areas: <strong>{{location}}</strong></p>
+  <p> The alert will be sent by: <strong>{{alerts}}</strong></p>
+  <a>Confirm</a>
+  <a>Cancel</a>
 </template>
