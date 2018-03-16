@@ -58,6 +58,41 @@ Template.disaster.events({
     selection.disaster="Missile";
     BlazeLayout.render('load', {"stage":stage});
   },
+  'click #hurricane'(event, instance) {
+    stage="location";
+    selection.disaster="hurricane";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #flooding'(event, instance) {
+    stage="location";
+    selection.disaster="flooding";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #tsunami'(event, instance) {
+    stage="location";
+    selection.disaster="tsunami";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #wildfire'(event, instance) {
+    stage="location";
+    selection.disaster="wildfire";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #earthquake'(event, instance) {
+    stage="location";
+    selection.disaster="earthquake";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #terrorist'(event, instance) {
+    stage="location";
+    selection.disaster="terrorist";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #meteor'(event, instance) {
+    stage="location";
+    selection.disaster="meteor";
+    BlazeLayout.render('load', {"stage":stage});
+  },
 });
 
 
@@ -116,6 +151,41 @@ Template.summary.helpers({
 Template.summary.events({
   'click #confirm'(event, instance) {
     stage="confirmation";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #cancel'(event, instance) {
+    stage="drill";
+    selection.drill=null;
+    selection.disaster=null;
+    selection.locations=[];
+    selection.alerts=[];
+    BlazeLayout.render('load', {"stage":stage});
+  },
+});
+
+
+Template.confirmation.helpers({
+  drill(){
+    return selection.drill;
+  },
+  disaster(){
+    return selection.disaster;
+  },
+  locations(){
+    return selection.locations;
+  },
+  alerts(){
+    return selection.alerts;
+  }
+});
+
+
+//confirmation
+Template.confirmation.events({
+  'click #exit'(event, instance) {
+    stage="drill";
+	canceled = false;
+    selection.confirmation="exit";
     BlazeLayout.render('load', {"stage":stage});
   },
   'click #cancel'(event, instance) {
