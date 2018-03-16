@@ -14,18 +14,20 @@ var options = {
 };
 */
 var stage = null;
+var cancelled = false;
 /*The following stores the user's selections from the interface*/
 var selection = {
   "drill": null,
   "disaster": null,
   "locations": [],
-  "alerts": []
+  "alerts": [],
   };
 
 
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
   stage = "drill";
+  cancelled = false;
   selection = {
     "drill": null,
     "disaster": null,
@@ -41,12 +43,22 @@ Template.drill.events({
   'click #drill'(event, instance) {
     stage="disaster";
     selection.drill="A Drill";
+    cancelled = false;
     BlazeLayout.render('load', {"stage":stage});
   },
   'click #not_drill'(event, instance) {
     stage="disaster";
     selection.drill="Not a Drill";
+    cancelled = false;
     BlazeLayout.render('load', {"stage":stage});
+  },
+});
+
+Template.drill.helpers({
+  cancelled_last() {
+    if (cancelled){
+      return "Prior Alert canceled";
+    }
   },
 });
 
@@ -180,6 +192,7 @@ Template.summary.events({
     selection.disaster=null;
     selection.locations=[];
     selection.alerts=[];
+    canceled=true;
     BlazeLayout.render('load', {"stage":stage});
   },
 });
@@ -205,6 +218,7 @@ Template.confirmation.events({
     selection.disaster=null;
     selection.locations=[];
     selection.alerts=[];
+    canceled=true;
     BlazeLayout.render('load', {"stage":stage});
   },
 });
