@@ -1,0 +1,162 @@
+<head>
+  <title>HawaiiAlert</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+</head>
+
+
+<body>
+  {{> interface}}
+</body>
+
+
+<template name="interface">
+</template>
+
+
+<template name="load">
+  <div class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+    {{>Template.dynamic template=stage}}
+  </div>
+</template>
+
+
+<template name="drill">
+  <h1 style="text-align: center">Is this a drill?</h1>
+  <div style="text-align: center">
+    <a id="drill" class="ui button" style="background-color: yellow;width: 130px">Drill</a>
+    <a id="not_drill" class="ui button" style="width:130px;background-color: red;margin-left: 10%">NOT A DRILL</a>
+  </div>
+  <div style="text-align: center;margin-top: 5%">
+    <p>{{cancelled_last}}</p>
+  </div>
+</template>
+
+
+<template name="disaster">
+  <h1 style="text-align: center">What is the nature of the disaster?</h1>
+  <div class="ui centered grid" >
+    <div class="row">
+      <a id="missile" style="width: 130px" class="ui column button">Missile</a>
+      <a id="hurricane" style="width: 130px;margin-left: 5%" class="ui column button">Hurricane</a>
+    </div>
+    <div class="row" >
+      <a id="flooding" style="width: 130px" class="ui column button">Flooding</a>
+      <a id="tsunami" style="width: 130px;margin-left: 5%" class="ui column button">Tsunami</a>
+    </div>
+    <div class="row">
+      <a id="wildfire" style="width: 130px" class="ui column button">Wildfire</a>
+      <a id="earthquake" style="width: 130px;margin-left: 5%" class="ui column button">Earthquake</a>
+    </div>
+    <div class="row">
+      <a id="terrorist" style="width: 130px" class="ui column button">Terrorist Attack</a>
+      <a id="meteor" style="width: 130px;margin-left: 5%" class="ui column button">Meteor</a>
+    </div>
+    <div class="row">
+      <a class="ui button" id="back">Back</a>
+    </div>
+  </div>
+</template>
+
+
+<template name="location">
+  <h1 style="text-align: center">What areas will this affect?</h1>
+  <div class="ui centered grid">
+    <div class="row">
+    <div style="width: 150px" class="ui checkbox">
+      <input type="checkbox" id="oahu">
+      <label >Oahu</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="maui">
+      <label>Maui</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="hawaii">
+      <label>Hawaii Island</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="kauai">
+      <label>Kauai</label>
+    </div>
+    </div>
+    <div class="row">
+      <a class="ui button red" id="submit">Submit</a>
+      <a class="ui button" id="back">Back</a>
+    </div>
+  </div>
+</template>
+
+
+<template name="alerts">
+  <h1 style="text-align: center">What alerts should be sent?</h1>
+  <div class="ui centered grid">
+    <div class="row">
+    <div style="width: 150px" class="ui checkbox">
+      <input type="checkbox" id="text">
+      <label >Text Alert</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="tv">
+      <label>TV Alert</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="radio">
+      <label>Radio Alert</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="siren">
+      <label>Warning Sirens</label>
+    </div>
+    </div>
+    <div class="row">
+      <a class="ui button red" id="submit">Submit</a>
+      <a class="ui button" id="back">Back</a>
+    </div>
+  </div>
+</template>
+
+
+<template name="summary">
+  <div class="ui container">
+    <h1>Summary</h1>
+    <p>You are issuing an alert for: <strong>{{disaster}}</strong></p>
+    <p>This alert is: <strong>{{drill}}</strong></p>
+    <p>The alert is for the following areas: <strong>{{locations}}</strong></p>
+    <p>The alert will be sent by: <strong>{{alerts}}</strong></p>
+    <a class="ui button" id="confirm">Confirm</a>
+    <a class="ui button" id="cancel">Cancel</a>
+  </div>
+</template>
+
+
+<template name="confirmation">
+  <div class="ui container">
+    <h1>Please have your second enter their password and the confirmation phrase</h1>
+	
+	<!--REMOVE FROM FINAL INTERFACE-->
+	<p><em>Testing: The password is currently "password", on success, selections made will be printed to the console</em></p>
+	
+	
+    <form>
+      <h3>Password:</h3>
+      <input type="text" name="password">
+      <h3>Enter the phrase: {{drill}}</h3>
+      <input type="text" name="drill">
+      <input type="submit" class="ui button" value="Confirm">
+    </form>
+    <a class="ui button" id="cancel">Cancel Alert</a>
+  </div>
+</template>
