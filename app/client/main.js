@@ -58,14 +58,60 @@ Template.disaster.events({
     selection.disaster="Missile";
     BlazeLayout.render('load', {"stage":stage});
   },
+  'click #hurricane'(event, instance) {
+    stage="location";
+    selection.disaster="Hurricane";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #tsunami'(event, instance) {
+    stage="location";
+    selection.disaster="Tsunami";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #flooding'(event, instance) {
+    stage="location";
+    selection.disaster="Flooding";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #earthquake'(event, instance) {
+    stage="location";
+    selection.disaster="Earthquake";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #fire'(event, instance) {
+    stage="location";
+    selection.disaster="Fire";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #back'(event, instance) {
+    stage="drill";
+    selection.disaster=null;
+    BlazeLayout.render('load', {"stage":stage});
+  },
 });
 
 
 /////Location/////
 Template.location.events({
-  'click #honolulu'(event, instance) {
+  'click #submit'(event, instance) {
     stage="alerts";
-    selection.locations.push("Honolulu");
+    if (oahu.checked) {
+      selection.locations.push("Oahu");
+    }
+    if (maui.checked) {
+      selection.locations.push("Maui");
+    }
+    if (hawaii.checked) {
+      selection.locations.push("Hawaii Island");
+    }
+    if (kauai.checked) {
+      selection.locations.push("Kauai");
+    }
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #back'(event, instance) {
+    stage="disaster";
+    selection.locations=[];
     BlazeLayout.render('load', {"stage":stage});
   },
 });
@@ -126,4 +172,21 @@ Template.summary.events({
     selection.alerts=[];
     BlazeLayout.render('load', {"stage":stage});
   },
+});
+
+
+/////Confirmation/////
+Template.confirmation.helpers({
+  drill(){
+    return selection.drill;
+  }
+});
+
+Template.confirmation.events({
+  'submit form': function(event){
+    event.preventDefault();
+    if(event.target.password.value=="password"&&event.target.drill.value==selection.drill){
+      console.log(selection);
+    }
+  }
 });
