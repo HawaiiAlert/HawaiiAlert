@@ -63,14 +63,19 @@ Template.disaster.events({
     selection.disaster="Hurricane";
     BlazeLayout.render('load', {"stage":stage});
   },
+  'click #flooding'(event, instance) {
+    stage="location";
+    selection.disaster="Flooding";
+    BlazeLayout.render('load', {"stage":stage});
+  },
   'click #tsunami'(event, instance) {
     stage="location";
     selection.disaster="Tsunami";
     BlazeLayout.render('load', {"stage":stage});
   },
-  'click #flooding'(event, instance) {
+  'click #wildfire'(event, instance) {
     stage="location";
-    selection.disaster="Flooding";
+    selection.disaster="Wildfire";
     BlazeLayout.render('load', {"stage":stage});
   },
   'click #earthquake'(event, instance) {
@@ -78,9 +83,14 @@ Template.disaster.events({
     selection.disaster="Earthquake";
     BlazeLayout.render('load', {"stage":stage});
   },
-  'click #fire'(event, instance) {
+  'click #terrorist'(event, instance) {
     stage="location";
-    selection.disaster="Fire";
+    selection.disaster="Terrorist Attack";
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #meteor'(event, instance) {
+    stage="location";
+    selection.disaster="Meteor";
     BlazeLayout.render('load', {"stage":stage});
   },
   'click #back'(event, instance) {
@@ -188,5 +198,13 @@ Template.confirmation.events({
     if(event.target.password.value=="password"&&event.target.drill.value==selection.drill){
       console.log(selection);
     }
-  }
+  },
+  'click #cancel'(event, instance) {
+    stage="drill";
+    selection.drill=null;
+    selection.disaster=null;
+    selection.locations=[];
+    selection.alerts=[];
+    BlazeLayout.render('load', {"stage":stage});
+  },
 });
