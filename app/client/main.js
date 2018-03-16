@@ -192,7 +192,7 @@ Template.summary.events({
     selection.disaster=null;
     selection.locations=[];
     selection.alerts=[];
-    canceled=true;
+    cancelled=true;
     BlazeLayout.render('load', {"stage":stage});
   },
 });
@@ -218,7 +218,7 @@ Template.confirmation.events({
     selection.disaster=null;
     selection.locations=[];
     selection.alerts=[];
-    canceled=true;
+    cancelled=true;
     BlazeLayout.render('load', {"stage":stage});
   },
 });
