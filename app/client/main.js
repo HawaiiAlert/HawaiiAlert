@@ -210,6 +210,8 @@ Template.confirmation.events({
     event.preventDefault();
     if(event.target.password.value=="password"&&event.target.drill.value==selection.drill){
       console.log(selection);
+      stage="false_alarm";
+      BlazeLayout.render('load', {"stage":stage});
     }
   },
   'click #cancel'(event, instance) {
@@ -219,6 +221,30 @@ Template.confirmation.events({
     selection.locations=[];
     selection.alerts=[];
     cancelled=true;
+    BlazeLayout.render('load', {"stage":stage});
+  },
+});
+
+
+/////False Alarm/////
+Template.false_alarm.events({
+  'click #return'(event, instance) {
+    stage="drill";
+    selection.drill=null;
+    selection.disaster=null;
+    selection.locations=[];
+    selection.alerts=[];
+    cancelled=false;
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #false_alarm'(event, instance) {
+    stage="drill";
+    selection.drill=null;
+    selection.disaster=null;
+    selection.locations=[];
+    selection.alerts=[];
+    cancelled=true;
+    console.log("False Alarm");
     BlazeLayout.render('load', {"stage":stage});
   },
 });
