@@ -19,7 +19,8 @@ var selection = {
   "drill": null,
   "disaster": null,
   "locations": [],
-  "alerts": []
+  "alerts": [],
+  "canceled": false,
   };
 
 
@@ -48,6 +49,15 @@ Template.drill.events({
     selection.drill="Not a Drill";
     BlazeLayout.render('load', {"stage":stage});
   },
+});
+
+Template.drill.helpers({
+	canceled_last() {
+		if (selection.canceled) 
+		{
+			return "Prior Alert canceled";
+		}
+	},
 });
 
 
@@ -85,7 +95,7 @@ Template.disaster.events({
   },
   'click #terrorist'(event, instance) {
     stage="location";
-    selection.disaster="terrorist";
+    selection.disaster="Terrorist Attack";
     BlazeLayout.render('load', {"stage":stage});
   },
   'click #meteor'(event, instance) {
@@ -98,9 +108,25 @@ Template.disaster.events({
 
 /////Location/////
 Template.location.events({
-  'click #honolulu'(event, instance) {
+  'click #submit'(event, instance) {
     stage="alerts";
-    selection.locations.push("Honolulu");
+    if (kauai.checked) {
+      selection.locations.push("Kauai");
+    }
+    if (oahu.checked) {
+      selection.locations.push("Oahu");
+    }
+    if (maui.checked) {
+      selection.locations.push("Maui");
+    }
+    if (big_island.checked) {
+      selection.locations.push("Big Island");
+    }
+    BlazeLayout.render('load', {"stage":stage});
+  },
+  'click #back'(event, instance) {
+    stage="disaster";
+    selection.locations=[];
     BlazeLayout.render('load', {"stage":stage});
   },
 });
@@ -159,11 +185,13 @@ Template.summary.events({
     selection.disaster=null;
     selection.locations=[];
     selection.alerts=[];
+	selection.canceled=true;
     BlazeLayout.render('load', {"stage":stage});
   },
 });
 
 
+//confirmation
 Template.confirmation.helpers({
   drill(){
     return selection.drill;
@@ -180,12 +208,14 @@ Template.confirmation.helpers({
 });
 
 
-//confirmation
 Template.confirmation.events({
   'click #exit'(event, instance) {
     stage="drill";
-	canceled = false;
-    selection.confirmation="exit";
+	selection.drill=null;
+    selection.disaster=null;
+    selection.locations=[];
+    selection.alerts=[];
+	selection.canceled=false;
     BlazeLayout.render('load', {"stage":stage});
   },
   'click #cancel'(event, instance) {
@@ -194,6 +224,7 @@ Template.confirmation.events({
     selection.disaster=null;
     selection.locations=[];
     selection.alerts=[];
+	selection.canceled=true;
     BlazeLayout.render('load', {"stage":stage});
   },
 });

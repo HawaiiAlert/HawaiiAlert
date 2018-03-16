@@ -27,6 +27,9 @@
     <a id="drill" class="ui button" style="background-color: yellow;width: 130px">Drill</a>
     <a id="not_drill" class="ui button" style="width:130px;background-color: red;margin-left: 10%">NOT A DRILL</a>
   </div>
+  <div style="text-align: center;margin-top: 5%">
+    <p>{{canceled_last}}</p>
+  </div>
 </template>
 
 
@@ -56,7 +59,34 @@
 <template name="location">
   <h1 style="text-align: center">What areas will this affect?</h1>
   <div class="ui centered grid">
-    <a id="honolulu" class="ui button">Honolulu</a>
+    <div class="row">
+    <div style="width: 150px" class="ui checkbox">
+      <input type="checkbox" id="kauai">
+      <label >Kauai</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="oahu">
+      <label>Oahu</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="maui">
+      <label>Maui</label>
+    </div>
+    </div>
+    <div class="row">
+    <div style="width: 150px"  class="ui checkbox">
+      <input type="checkbox" id="big_island">
+      <label>Big Island</label>
+    </div>
+    </div>
+    <div class="row">
+      <a class="ui button red" id="submit">Submit</a>
+      <a class="ui button" id="back">Back</a>
+    </div>
   </div>
 </template>
 
@@ -110,6 +140,7 @@
   <h1>The following has been sent</h1>
   <p> <strong>{{disaster}}</strong> alert </p>
   <p> Alert is <strong>{{drill}}</strong></p>
+  <p> Areas affected: <strong>{{locations}}</strong></p>
   <p> Channels used: <strong>{{alerts}}</strong> </p>
   <a id="exit" class="ui button">Exit</a>
   <a id="cancel" class="ui button">CANCEL ALERT</a>
