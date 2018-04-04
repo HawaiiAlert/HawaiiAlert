@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Session } from 'meteor/session';
 
 import './main.html';
 
@@ -13,50 +14,50 @@ var options = {
   "alerts" = {},
 };
 */
-var stage = null;
-var cancelled = false;
-/*The following stores the user's selections from the interface*/
-var selection = {
-  "drill": null,
-  "disaster": null,
-  "locations": [],
-  "alerts": [],
-  };
+var session;
 
 
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
-  stage = "drill";
-  cancelled = false;
-  selection = {
-    "drill": null,
-    "disaster": null,
-    "locations": [],
-    "alerts": []
+  if(!Session.get('session')){
+    session = {
+      "stage": "drill",
+      "canceled": false,
+      "drill": null,
+      "disaster": null,
+      "locations": [],
+      "alerts": [],
     };
-  BlazeLayout.render('load', {"stage":stage});
+    Session.setPersistent('session', session);
+  }
+  session = Session.get('session')
+  BlazeLayout.render('load', {"stage":Session.get('session').stage});
 });
 
 
 /////Drill/////
 Template.drill.events({
   'click #drill'(event, instance) {
-    stage="disaster";
-    selection.drill="A Drill";
-    cancelled = false;
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "disaster";
+    session.drill = "A Drill";
+    session.canceled = false;
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #not_drill'(event, instance) {
-    stage="disaster";
-    selection.drill="Not a Drill";
-    cancelled = false;
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "disaster";
+    session.drill = "Not a Drill";
+    session.canceled = false;
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
 
 Template.drill.helpers({
-  cancelled_last() {
-    if (cancelled){
+  canceled_last() {
+    if (Session.get('session').canceled){
       return "Prior Alert canceled";
     }
   },
@@ -66,49 +67,68 @@ Template.drill.helpers({
 /////Disaster/////
 Template.disaster.events({
   'click #missile'(event, instance) {
-    stage="location";
-    selection.disaster="Missile";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Missile";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #hurricane'(event, instance) {
-    stage="location";
-    selection.disaster="Hurricane";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Hurricane";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #flooding'(event, instance) {
-    stage="location";
-    selection.disaster="Flooding";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Flooding";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #tsunami'(event, instance) {
-    stage="location";
-    selection.disaster="Tsunami";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Tsunami";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #wildfire'(event, instance) {
-    stage="location";
-    selection.disaster="Wildfire";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Wildfire";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #earthquake'(event, instance) {
-    stage="location";
-    selection.disaster="Earthquake";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Earthquake";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #terrorist'(event, instance) {
-    stage="location";
-    selection.disaster="Terrorist Attack";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Terrorist Attack";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #meteor'(event, instance) {
-    stage="location";
-    selection.disaster="Meteor";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.disaster = "Meteor";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #back'(event, instance) {
-    stage="drill";
-    selection.disaster=null;
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "drill";
+    session.drill = null;
+    session.disaster = null;
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
 
@@ -116,25 +136,30 @@ Template.disaster.events({
 /////Location/////
 Template.location.events({
   'click #submit'(event, instance) {
-    stage="alerts";
+    session = Session.get('session');
+    session.stage = "alerts";
     if (oahu.checked) {
-      selection.locations.push("Oahu");
+      session.locations.push("Oahu");
     }
     if (maui.checked) {
-      selection.locations.push("Maui");
+      session.locations.push("Maui");
     }
     if (hawaii.checked) {
-      selection.locations.push("Hawaii Island");
+      session.locations.push("Hawaii Island");
     }
     if (kauai.checked) {
-      selection.locations.push("Kauai");
+      session.locations.push("Kauai");
     }
-    BlazeLayout.render('load', {"stage":stage});
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #back'(event, instance) {
-    stage="disaster";
-    selection.locations=[];
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "disaster";
+    session.disaster = null;
+    session.locations = [];
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
 
@@ -142,25 +167,30 @@ Template.location.events({
 /////Alerts/////
 Template.alerts.events({
   'click #submit'(event, instance) {
-    stage="summary";
+    session = Session.get('session');
+    session.stage = "summary";
     if (text.checked) {
-      selection.alerts.push("Text Alert");
+      session.alerts.push("Text Alert");
     }
     if (tv.checked) {
-      selection.alerts.push("TV Alert");
+      session.alerts.push("TV Alert");
     }
     if (radio.checked) {
-      selection.alerts.push("Radio Alert");
+      session.alerts.push("Radio Alert");
     }
     if (siren.checked) {
-      selection.alerts.push("Warning Sirens");
+      session.alerts.push("Warning Sirens");
     }
-    BlazeLayout.render('load', {"stage":stage});
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #back'(event, instance) {
-    stage="location";
-    selection.alerts=[];
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "location";
+    session.locations = []
+    session.alerts = [];
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
 
@@ -168,32 +198,36 @@ Template.alerts.events({
 /////Summary/////
 Template.summary.helpers({
   drill(){
-    return selection.drill;
+    return Session.get('session').drill;
   },
   disaster(){
-    return selection.disaster;
+    return Session.get('session').disaster;
   },
   locations(){
-    return selection.locations;
+    return Session.get('session').locations;
   },
   alerts(){
-    return selection.alerts;
+    return Session.get('session').alerts;
   }
 });
 
 Template.summary.events({
   'click #confirm'(event, instance) {
-    stage="confirmation";
-    BlazeLayout.render('load', {"stage":stage});
+    session = Session.get('session');
+    session.stage = "confirmation";
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #cancel'(event, instance) {
-    stage="drill";
-    selection.drill=null;
-    selection.disaster=null;
-    selection.locations=[];
-    selection.alerts=[];
-    cancelled=true;
-    BlazeLayout.render('load', {"stage":stage});
+    Session.update('session', {
+      "stage": "drill",
+      "canceled": true,
+      "drill": null,
+      "disaster": null,
+      "locations": [],
+      "alerts": []
+      });
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
 
@@ -201,27 +235,31 @@ Template.summary.events({
 /////Confirmation/////
 Template.confirmation.helpers({
   drill(){
-    return selection.drill;
+    return Session.get('session').drill;
   }
 });
 
 Template.confirmation.events({
   'submit form': function(event){
     event.preventDefault();
-    if(event.target.password.value=="password"&&event.target.drill.value==selection.drill){
-      console.log(selection);
-      stage="false_alarm";
-      BlazeLayout.render('load', {"stage":stage});
+	session = Session.get('session');
+    if(event.target.password.value == "password" && event.target.drill.value == session.drill){
+      console.log(session);
+      session.stage = "false_alarm";
+      Session.update('session', session);
+      BlazeLayout.render('load', {"stage":Session.get('session').stage});
     }
   },
   'click #cancel'(event, instance) {
-    stage="drill";
-    selection.drill=null;
-    selection.disaster=null;
-    selection.locations=[];
-    selection.alerts=[];
-    cancelled=true;
-    BlazeLayout.render('load', {"stage":stage});
+    Session.update('session', {
+      "stage": "drill",
+      "canceled": true,
+      "drill": null,
+      "disaster": null,
+      "locations": [],
+      "alerts": []
+      });
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
 
@@ -229,22 +267,26 @@ Template.confirmation.events({
 /////False Alarm/////
 Template.false_alarm.events({
   'click #return'(event, instance) {
-    stage="drill";
-    selection.drill=null;
-    selection.disaster=null;
-    selection.locations=[];
-    selection.alerts=[];
-    cancelled=false;
-    BlazeLayout.render('load', {"stage":stage});
+    Session.update('session', {
+      "stage": "drill",
+      "canceled": false,
+      "drill": null,
+      "disaster": null,
+      "locations": [],
+      "alerts": []
+      });
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #false_alarm'(event, instance) {
-    stage="drill";
-    selection.drill=null;
-    selection.disaster=null;
-    selection.locations=[];
-    selection.alerts=[];
-    cancelled=true;
+    Session.update('session', {
+      "stage": "drill",
+      "canceled": true,
+      "drill": null,
+      "disaster": null,
+      "locations": [],
+      "alerts": []
+      });
     console.log("False Alarm");
-    BlazeLayout.render('load', {"stage":stage});
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });
