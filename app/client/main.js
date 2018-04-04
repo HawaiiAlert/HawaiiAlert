@@ -19,7 +19,8 @@ var session;
 
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
-  if(!Session.get('session')){
+  session = Session.get('session');
+  if(!session){
     session = {
       "stage": "drill",
       "canceled": false,
@@ -30,7 +31,6 @@ Template.interface.onCreated(function onCreated(){
     };
     Session.setPersistent('session', session);
   }
-  session = Session.get('session')
   BlazeLayout.render('load', {"stage":Session.get('session').stage});
 });
 
