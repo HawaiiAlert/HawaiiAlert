@@ -1,9 +1,14 @@
+
+
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Session } from 'meteor/session';
 
 import './main.html';
+import {Radio} from './Radio.js';
+import './Radio_driver.js';
+
 
 /*The following will store options, the page will then generate based on them, allowing new options to be added quickly*/
 /*
@@ -15,6 +20,7 @@ var options = {
 };
 */
 var session;
+
 
 
 /////Interface/////
@@ -265,6 +271,15 @@ Template.confirmation.events({
 
 
 /////False Alarm/////
+Template.false_alarm.helpers({
+	radio(){
+		var r = new Radio(Session.get('session').disaster);
+		var temp = "-------------------";
+		return r.getDisaster();
+	}
+});
+
+
 Template.false_alarm.events({
   'click #return'(event, instance) {
     Session.update('session', {
