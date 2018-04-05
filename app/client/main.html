@@ -1,3 +1,5 @@
+
+
 <head>
   <title>HawaiiAlert</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -163,6 +165,9 @@
 
 <template name="false_alarm">
   <div class="ui container">
+	<!--Below should display content gotten from the objects used -->
+	<p>The disaster was :{{radio}}</p>
+	<!--Above should display content gotten from the objects used -->
     <p>To return to the beginning of the interface, press "Return".</p>
     <p>If this was a false alarm, press "False Alarm".</p>
     <a class="ui button" id="return">Return</a>
