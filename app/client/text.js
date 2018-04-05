@@ -1,12 +1,8 @@
 import { Session } from 'meteor/session';
 
 class TextDevice {
-  constructor(device){
-    try{
-      this.message = device.message;
-    }catch(error){
-      this.message = "";
-    }
+  constructor(){
+    this.message = "";
   }
   setMessage(message){
     this.message = message;

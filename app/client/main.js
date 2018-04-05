@@ -1,10 +1,9 @@
-
-
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Session } from 'meteor/session';
 import './main.html';
+import TextDevice from './text.js';
 import {Radio} from './Radio.js';
 import {Radio_driver} from './Radio_driver.js';
 
@@ -21,13 +20,16 @@ var options = {
 var session;
 var driver;
 var device;
+var devices = {
+    "text": new TextDevice(),
+  }
 
 function loadDriver(file_name, device){
   driver = require(file_name);
   driver.open(device);
-  device = driver.configure(device, 'session');
-  device = driver.warningON(device, Session.get('session').drill);
-  device = driver.warningOFF(device);
+  driver.configure(device, 'session');
+  driver.warningON(device, Session.get('session').drill);
+  driver.warningOFF(device);
   driver.close(device);
 }
 
@@ -36,8 +38,6 @@ function loadDriver(file_name, device){
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
   session = Session.get('session');
-  import TextDevice from './text.js';
-  var textdev = new TextDevice();
   if(!session){
     session = {
       "stage": "drill",
@@ -46,9 +46,6 @@ Template.interface.onCreated(function onCreated(){
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "devices": {
-        "text": textdev,
-      },
     };
     Session.setPersistent('session', session);
   }
@@ -253,7 +250,6 @@ Template.summary.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "devices": Session.get('session').devices,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -273,7 +269,7 @@ Template.confirmation.events({
     session = Session.get('session');
     if(event.target.password.value == "password" && event.target.drill.value == session.drill){
       if(session.alerts.includes('Text Alert')){
-        loadDriver('./text_driver.js', session.devices.text);
+        loadDriver('./text_driver.js', devices.text);
       }
       //console.log(session);
       session.stage = "false_alarm";
@@ -289,7 +285,6 @@ Template.confirmation.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "devices": Session.get('session').devices,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -325,7 +320,6 @@ Template.false_alarm.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "devices": Session.get('session').devices,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -334,7 +328,7 @@ Template.false_alarm.events({
     session.canceled = true;
     Session.update('session', session);
     if(session.alerts.includes('Text Alert')){
-      loadDriver('./text_driver.js', session.devices.text);
+      loadDriver('./text_driver.js', devices.text);
     }
     Session.update('session', {
       "stage": "drill",
@@ -343,7 +337,6 @@ Template.false_alarm.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "devices": Session.get('session').devices,
     });
     //console.log("False Alarm");
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
