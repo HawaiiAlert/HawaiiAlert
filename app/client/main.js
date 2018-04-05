@@ -1,8 +1,13 @@
+
+
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Session } from 'meteor/session';
 import './main.html';
+import {Radio} from './Radio.js';
+import {Radio_driver} from './Radio_driver.js';
+
 
 /*The following will store options, the page will then generate based on them, allowing new options to be added quickly*/
 /*
@@ -25,6 +30,7 @@ function loadDriver(file_name, device){
   device = driver.warningOFF(device);
   driver.close(device);
 }
+
 
 
 /////Interface/////
@@ -291,6 +297,25 @@ Template.confirmation.events({
 
 
 /////False Alarm/////
+Template.false_alarm.helpers({
+	radio(){
+		if ( Session.get('session').alerts.includes("Radio Alert") &&  Session.get('session').drill === "A Drill") {
+			var r = new Radio(Session.get('session').drill, Session.get('session').disaster);
+			var rD = new Radio_driver(r);
+			return rD.test(r);
+		} 
+		else if ( Session.get('session').alerts.includes("Radio Alert") &&  Session.get('session').drill === "Not a Drill") {
+			var r = new Radio(Session.get('session').drill, Session.get('session').disaster);
+			var rD = new Radio_driver(r);
+			return rD.use(r);
+		}
+		else {
+			return "----------something wrong with device or driver--------------";
+		}
+	}
+});
+
+
 Template.false_alarm.events({
   'click #return'(event, instance) {
     Session.update('session', {
