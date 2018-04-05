@@ -7,7 +7,7 @@ import { Session } from 'meteor/session';
 
 import './main.html';
 import {Radio} from './Radio.js';
-import './Radio_driver.js';
+import {Radio_driver} from './Radio_driver.js';
 
 
 /*The following will store options, the page will then generate based on them, allowing new options to be added quickly*/
@@ -273,9 +273,19 @@ Template.confirmation.events({
 /////False Alarm/////
 Template.false_alarm.helpers({
 	radio(){
-		var r = new Radio(Session.get('session').disaster);
-		var temp = "-------------------";
-		return r.getDisaster();
+		if ( Session.get('session').alerts.includes("Radio Alert") &&  Session.get('session').drill === "A Drill") {
+			var r = new Radio(Session.get('session').drill, Session.get('session').disaster);
+			var rD = new Radio_driver(r);
+			return rD.test(r);
+		} 
+		else if ( Session.get('session').alerts.includes("Radio Alert") &&  Session.get('session').drill === "Not a Drill") {
+			var r = new Radio(Session.get('session').drill, Session.get('session').disaster);
+			var rD = new Radio_driver(r);
+			return rD.use(r);
+		}
+		else {
+			return "----------something wrong with device or driver--------------";
+		}
 	}
 });
 
