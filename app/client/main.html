@@ -24,8 +24,8 @@
 <template name="drill">
   <h1 style="text-align: center">Is this a drill?</h1>
   <div style="text-align: center">
-    <a id="drill" class="ui button" style="background-color: yellow;width: 130px">Drill</a>
-    <a id="not_drill" class="ui button" style="width:130px;background-color: red;margin-left: 10%">NOT A DRILL</a>
+    <a id="drill" class="ui button yellow" style="width: 130px">Drill</a>
+    <a id="not_drill" class="ui button blue" style="width:130px;margin-left: 10%">NOT A DRILL</a>
   </div>
   <div style="text-align: center;margin-top: 5%">
     <p>{{canceled_last}}</p>
@@ -131,45 +131,48 @@
 
 <template name="summary">
   <div class="ui container">
-    <h1>Summary</h1>
-    <p>You are issuing an alert for: <strong>{{disaster}}</strong></p>
-    <p>This alert is: <strong>{{drill}}</strong></p>
-    <p>The alert is for the following areas: <strong>{{locations}}</strong></p>
-    <p>The alert will be sent by: <strong>{{alerts}}</strong></p>
-    <a class="ui button" id="confirm">Confirm</a>
+    <h1 style="text-align: center">Summary</h1>
+    <div style="text-align: center">
+    <p>You are issuing an alert for:  <strong>{{disaster}}</strong></p>
+    <p>This alert is:  <strong>{{drill}}</strong></p>
+    <p>The alert is for the following areas:  <strong>{{locations}}</strong></p>
+    <p>The alert will be sent by:  <strong>{{alerts}}</strong></p>
+    <a class="ui button red" id="confirm">Confirm</a>
     <a class="ui button" id="cancel">Cancel</a>
+    </div>
   </div>
 </template>
 
 
 <template name="confirmation">
   <div class="ui container">
-    <h1>Please have your second enter their password and the confirmation phrase</h1>
+    <h1 style="text-align: center">Please have your second enter their password and the confirmation phrase</h1>
 	
 	<!--REMOVE FROM FINAL INTERFACE-->
 	<p><em>Testing: The password is currently "password", on success, selections made will be printed to the console</em></p>
-	
-	
-    <form>
-      <h3>Password:</h3>
-      <input type="text" name="password">
-      <h3>Enter the phrase: {{drill}}</h3>
+
+    <form style="text-align: center">
+
+      <strong style="font-size: medium"> Password: </strong> <input type="text" name="password">
+
+      <h3>Enter the phrase: <u> {{drill}} </u> </h3>
       <input type="text" name="drill">
-      <input type="submit" class="ui button" value="Confirm">
+      <br><br>
+      <input type="submit" class="ui button red" value="Confirm">
+      <a class="ui button" id="cancel">Cancel Alert</a>
     </form>
-    <a class="ui button" id="cancel">Cancel Alert</a>
   </div>
 </template>
 
 <template name="false_alarm">
-  <div class="ui container">
+  <div class="ui container" style="text-align: center">
 	<!--Below should display content gotten from the objects used -->
 	<p>Response from Text: {{text}}</p>
 	<p>Response from Radio: {{radio}}</p>
 	<!--Above should display content gotten from the objects used -->
     <p>To return to the beginning of the interface, press "Return".</p>
     <p>If this was a false alarm, press "False Alarm".</p>
-    <a class="ui button" id="return">Return</a>
-    <a class="ui button" id="false_alarm">False Alarm</a>
+    <a class="ui button green" id="return">Return</a>
+    <a class="ui button red" id="false_alarm">False Alarm</a>
   </div>
 </template>

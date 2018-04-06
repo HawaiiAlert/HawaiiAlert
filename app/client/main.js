@@ -16,6 +16,7 @@ var options = {
   "alerts" = {},
 };
 */
+var color;
 var session;
 var driver;
 var device;
@@ -57,6 +58,7 @@ Template.interface.onCreated(function onCreated(){
 /////Drill/////
 Template.drill.events({
   'click #drill'(event, instance) {
+    color = "yellow";
     session = Session.get('session');
     session.stage = "disaster";
     session.drill = "A Drill";
@@ -65,6 +67,7 @@ Template.drill.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #not_drill'(event, instance) {
+    color = "blue";
     session = Session.get('session');
     session.stage = "disaster";
     session.drill = "Not a Drill";
