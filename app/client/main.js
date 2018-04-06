@@ -16,7 +16,6 @@ var options = {
   "alerts" = {},
 };
 */
-var color;
 var session;
 var driver;
 var device;
@@ -58,7 +57,7 @@ Template.interface.onCreated(function onCreated(){
 /////Drill/////
 Template.drill.events({
   'click #drill'(event, instance) {
-    color = "yellow";
+    document.getElementById("main").style.borderColor ="#FFD700";
     session = Session.get('session');
     session.stage = "disaster";
     session.drill = "A Drill";
@@ -67,7 +66,7 @@ Template.drill.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #not_drill'(event, instance) {
-    color = "blue";
+    document.getElementById("main").style.borderColor="#0E6EB8";
     session = Session.get('session');
     session.stage = "disaster";
     session.drill = "Not a Drill";
@@ -145,6 +144,7 @@ Template.disaster.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #back'(event, instance) {
+    document.getElementById("main").style.borderColor = "black";
     session = Session.get('session');
     session.stage = "drill";
     session.drill = null;
@@ -247,7 +247,8 @@ Template.summary.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #cancel'(event, instance) {
-    Session.update('session', {
+      document.getElementById("main").style.borderColor = "black";
+      Session.update('session', {
       "stage": "drill",
       "canceled": true,
       "drill": null,
@@ -280,7 +281,8 @@ Template.confirmation.events({
     }
   },
   'click #cancel'(event, instance) {
-    Session.update('session', {
+      document.getElementById("main").style.borderColor = "black";
+      Session.update('session', {
       "stage": "drill",
       "canceled": true,
       "drill": null,
@@ -317,6 +319,7 @@ Template.false_alarm.helpers({
 
 Template.false_alarm.events({
   'click #return'(event, instance) {
+    document.getElementById("main").style.borderColor = "black";
     event.preventDefault();
     can_alert = false;
     Session.update('session', {
@@ -330,6 +333,7 @@ Template.false_alarm.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #false_alarm'(event, instance) {
+    document.getElementById("main").style.borderColor = "black";
     event.preventDefault();
     session = Session.get('session');
     session.canceled = true;
