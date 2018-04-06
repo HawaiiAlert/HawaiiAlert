@@ -3,9 +3,8 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Session } from 'meteor/session';
 import './main.html';
-import TextDevice from './text.js';
-import {Radio} from './Radio.js';
-import {Radio_driver} from './Radio_driver.js';
+import { Text } from './text.js';
+import { Radio } from './Radio.js';
 
 
 /*The following will store options, the page will then generate based on them, allowing new options to be added quickly*/
@@ -21,18 +20,20 @@ var session;
 var driver;
 var device;
 var devices = {
-    "text": new TextDevice(),
+    "text": new Text(),
+    "radio": new Radio(),
   }
+var can_alert = false;
 
 function loadDriver(file_name, device){
   driver = require(file_name);
   driver.open(device);
   driver.configure(device, 'session');
-  driver.warningON(device, Session.get('session').drill);
+  var ret = driver.warningON(device, Session.get('session').drill);
   driver.warningOFF(device);
   driver.close(device);
+  return ret;
 }
-
 
 
 /////Interface/////
@@ -268,12 +269,10 @@ Template.confirmation.events({
     event.preventDefault();
     session = Session.get('session');
     if(event.target.password.value == "password" && event.target.drill.value == session.drill){
-      if(session.alerts.includes('Text Alert')){
-        loadDriver('./text_driver.js', devices.text);
-      }
       //console.log(session);
       session.stage = "false_alarm";
       Session.update('session', session);
+      can_alert = true;
       BlazeLayout.render('load', {"stage":Session.get('session').stage});
     }
   },
@@ -293,26 +292,30 @@ Template.confirmation.events({
 
 /////False Alarm/////
 Template.false_alarm.helpers({
-	radio(){
-		if ( Session.get('session').alerts.includes("Radio Alert") &&  Session.get('session').drill === "A Drill") {
-			var r = new Radio(Session.get('session').drill, Session.get('session').disaster);
-			var rD = new Radio_driver(r);
-			return rD.test(r);
-		} 
-		else if ( Session.get('session').alerts.includes("Radio Alert") &&  Session.get('session').drill === "Not a Drill") {
-			var r = new Radio(Session.get('session').drill, Session.get('session').disaster);
-			var rD = new Radio_driver(r);
-			return rD.use(r);
-		}
-		else {
-			return "----------something wrong with device or driver--------------";
-		}
-	}
+  radio(){
+    if(can_alert){
+      if(session.alerts.includes('Radio Alert')){
+        return loadDriver('./Radio_driver.js', devices.radio);
+      }else{
+        return "Device not selected";
+      }
+    }
+  },
+  text(){
+    if(can_alert){
+      if(session.alerts.includes('Text Alert')){
+        return loadDriver('./text_driver.js', devices.text);
+      }else{
+        return "Device not selected";
+      }
+    }
+  },
 });
-
 
 Template.false_alarm.events({
   'click #return'(event, instance) {
+    event.preventDefault();
+    can_alert = false;
     Session.update('session', {
       "stage": "drill",
       "canceled": false,
@@ -324,21 +327,25 @@ Template.false_alarm.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #false_alarm'(event, instance) {
+    event.preventDefault();
     session = Session.get('session');
     session.canceled = true;
     Session.update('session', session);
     if(session.alerts.includes('Text Alert')){
       loadDriver('./text_driver.js', devices.text);
     }
+    if(session.alerts.includes('Radio Alert')){
+      loadDriver('./Radio_driver.js', devices.radio);
+    }
+    can_alert = false;
     Session.update('session', {
       "stage": "drill",
-      "canceled": true,
+      "canceled": false,
       "drill": null,
       "disaster": null,
       "locations": [],
       "alerts": [],
-    });
-    //console.log("False Alarm");
+      });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
 });

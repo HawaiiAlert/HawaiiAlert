@@ -1,6 +1,4 @@
-import { Session } from 'meteor/session';
-
-class TextDevice {
+class Text {
   constructor(){
     this.message = "";
   }
@@ -8,9 +6,9 @@ class TextDevice {
     this.message = message;
   }
   send(drill){
-    console.log(drill);
+    console.log("Text Alert");
+    console.log("This is " + drill);
     console.log(this.message);
   }
 }
-
-export default TextDevice;
+export {Text}
