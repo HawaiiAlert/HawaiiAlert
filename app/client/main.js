@@ -35,6 +35,17 @@ function loadDriver(file_name, device){
   return ret;
 }
 
+function changecolor(session) {
+  if(session.drill == "A Drill"){
+      document.getElementById("main").style.borderColor ="#FFD700";
+  }
+  if(session.drill == "Not a Drill"){
+      document.getElementById("main").style.borderColor="#0E6EB8";
+  }
+  if(session.drill == null) {
+      document.getElementById("main").style.borderColor="black";
+  }
+}
 
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
@@ -54,10 +65,10 @@ Template.interface.onCreated(function onCreated(){
 });
 
 
+
 /////Drill/////
 Template.drill.events({
   'click #drill'(event, instance) {
-    document.getElementById("main").style.borderColor ="#FFD700";
     session = Session.get('session');
     session.stage = "disaster";
     session.drill = "A Drill";
@@ -66,7 +77,6 @@ Template.drill.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #not_drill'(event, instance) {
-    document.getElementById("main").style.borderColor="#0E6EB8";
     session = Session.get('session');
     session.stage = "disaster";
     session.drill = "Not a Drill";
@@ -82,6 +92,9 @@ Template.drill.helpers({
       return "Prior Alert canceled";
     }
   },
+    color(){
+        changecolor(Session.get('session'));
+    }
 });
 
 
@@ -144,7 +157,6 @@ Template.disaster.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #back'(event, instance) {
-    document.getElementById("main").style.borderColor = "black";
     session = Session.get('session');
     session.stage = "drill";
     session.drill = null;
@@ -154,6 +166,11 @@ Template.disaster.events({
   },
 });
 
+Template.disaster.helpers({
+    color(){
+        changecolor(Session.get('session'));
+    }
+});
 
 /////Location/////
 Template.location.events({
@@ -188,6 +205,11 @@ Template.location.events({
   },
 });
 
+Template.location.helpers({
+    color(){
+        changecolor(Session.get('session'));
+    }
+});
 
 /////Alerts/////
 Template.alerts.events({
@@ -222,6 +244,11 @@ Template.alerts.events({
   },
 });
 
+Template.alerts.helpers({
+    color(){
+        changecolor(Session.get('session'));
+    }
+});
 
 /////Summary/////
 Template.summary.helpers({
@@ -265,13 +292,29 @@ Template.summary.events({
 Template.confirmation.helpers({
   drill(){
     return Session.get('session').drill;
-  }
+  },
+  color(){
+    changecolor(Session.get('session'));
+}
 });
+
 
 Template.confirmation.events({
   'submit form': function(event){
     event.preventDefault();
     session = Session.get('session');
+    if(event.target.password.value !== "password" && event.target.drill.value !== session.drill){
+        document.getElementById("passerror").style.visibility="visible"
+        document.getElementById("phaseerror").style.visibility="visible"
+    }
+    if(event.target.password.value !== "password" && event.target.drill.value == session.drill){
+        document.getElementById("passerror").style.visibility="visible"
+        document.getElementById("phaseerror").style.visibility="hidden"
+    }
+    if(event.target.password.value == "password" && event.target.drill.value !== session.drill){
+        document.getElementById("passerror").style.visibility="hidden"
+        document.getElementById("phaseerror").style.visibility="visible"
+    }
     if(event.target.password.value == "password" && event.target.drill.value == session.drill){
       //console.log(session);
       session.stage = "false_alarm";
@@ -281,7 +324,6 @@ Template.confirmation.events({
     }
   },
   'click #cancel'(event, instance) {
-      document.getElementById("main").style.borderColor = "black";
       Session.update('session', {
       "stage": "drill",
       "canceled": true,
@@ -315,11 +357,13 @@ Template.false_alarm.helpers({
       }
     }
   },
+    color(){
+        changecolor(Session.get('session'));
+    }
 });
 
 Template.false_alarm.events({
   'click #return'(event, instance) {
-    document.getElementById("main").style.borderColor = "black";
     event.preventDefault();
     can_alert = false;
     Session.update('session', {
@@ -333,7 +377,6 @@ Template.false_alarm.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #false_alarm'(event, instance) {
-    document.getElementById("main").style.borderColor = "black";
     event.preventDefault();
     session = Session.get('session');
     session.canceled = true;

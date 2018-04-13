@@ -34,7 +34,7 @@
 
 
 <template name="disaster">
-  <h1 style="text-align: center">What is the nature of the disaster?</h1>
+  <h1 style="text-align: center"> What is the nature of the disaster?</h1>
   <div class="ui centered grid" >
     <div class="row">
       <a id="missile" style="width: 130px" class="ui column button">Missile</a>
@@ -56,6 +56,7 @@
       <a class="ui button" id="back">Back</a>
     </div>
   </div>
+  {{color}}
 </template>
 
 
@@ -91,10 +92,12 @@
       <a class="ui button" id="back">Back</a>
     </div>
   </div>
+  {{color}}
 </template>
 
 
 <template name="alerts">
+  {{color}}
   <h1 style="text-align: center">What alerts should be sent?</h1>
   <div class="ui centered grid">
     <div class="row">
@@ -126,6 +129,7 @@
       <a class="ui button" id="back">Back</a>
     </div>
   </div>
+  {{color}}
 </template>
 
 
@@ -141,6 +145,7 @@
     <a class="ui button" id="cancel">Cancel</a>
     </div>
   </div>
+  {{color}}
 </template>
 
 
@@ -154,14 +159,16 @@
     <form style="text-align: center">
 
       <strong style="font-size: medium"> Password: </strong> <input type="text" name="password">
-
+      <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
       <h3>Enter the phrase: <u> {{drill}} </u> </h3>
       <input type="text" name="drill">
-      <br><br>
+      <p id="phaseerror" style="color:red;visibility: hidden ">*incorrect phase</p>
+      <br>
       <input type="submit" class="ui button red" value="Confirm">
       <a class="ui button" id="cancel">Cancel Alert</a>
     </form>
   </div>
+  {{color}}
 </template>
 
 <template name="false_alarm">
@@ -175,4 +182,5 @@
     <a class="ui button green" id="return">Return</a>
     <a class="ui button red" id="false_alarm">False Alarm</a>
   </div>
+  {{color}}
 </template>
