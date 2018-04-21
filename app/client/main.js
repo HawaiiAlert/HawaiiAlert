@@ -293,9 +293,18 @@ Template.confirmation.helpers({
   drill(){
     return Session.get('session').drill;
   },
+  disaster(){
+    return Session.get('session').disaster;
+  },
+  locations(){
+    return Session.get('session').locations;
+  },
+  alerts(){
+    return Session.get('session').alerts;
+  },
   color(){
     changecolor(Session.get('session'));
-}
+  }
 });
 
 

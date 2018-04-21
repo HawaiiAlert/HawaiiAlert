@@ -152,13 +152,21 @@
 <template name="confirmation">
   <div class="ui container">
     <h1 style="text-align: center">Please have your second enter their password and the confirmation phrase</h1>
-	
-	<!--REMOVE FROM FINAL INTERFACE-->
-	<p><em>Testing: The password is currently "password", on success, selections made will be printed to the console</em></p>
 
+    <!--REMOVE FROM FINAL INTERFACE-->
+    <p><em>Testing: The password is currently "password", on success, selections made will be printed to the console</em></p>
+
+    <div class="ui container">
+      <h2 style="text-align: center">Summary</h2>
+      <div style="text-align: center">
+      <p>You are issuing an alert for:  <strong>{{disaster}}</strong></p>
+      <p>This alert is:  <strong>{{drill}}</strong></p>
+      <p>The alert is for the following areas:  <strong>{{locations}}</strong></p>
+      <p>The alert will be sent by:  <strong>{{alerts}}</strong></p>
+      </div>
+    </div>
     <form style="text-align: center">
-
-      <strong style="font-size: medium"> Password: </strong> <input type="text" name="password">
+      <strong style="font-size: medium"> Password: </strong> <input type="password" name="password">
       <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
       <h3>Enter the phrase: <u> {{drill}} </u> </h3>
       <input type="text" name="drill">
