@@ -2,6 +2,9 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Session } from 'meteor/session';
+import { _ } from 'meteor/underscore';
+import { Profiles } from '/both/ProfileCollection';
+import { Events } from '/both/EventCollection';
 import './main.html';
 import { Text } from './text.js';
 import { Radio } from './Radio.js';
@@ -92,9 +95,9 @@ Template.drill.helpers({
       return "Prior Alert canceled";
     }
   },
-    color(){
-        changecolor(Session.get('session'));
-    }
+  color(){
+    changecolor(Session.get('session'));
+  }
 });
 
 
@@ -312,19 +315,20 @@ Template.confirmation.events({
   'submit form': function(event){
     event.preventDefault();
     session = Session.get('session');
-    if(event.target.password.value !== "password" && event.target.drill.value !== session.drill){
-        document.getElementById("passerror").style.visibility="visible"
-        document.getElementById("phaseerror").style.visibility="visible"
+    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    if(event.target.password.value !== password && event.target.drill.value !== session.drill){
+      document.getElementById("passerror").style.visibility="visible"
+      document.getElementById("phaseerror").style.visibility="visible"
     }
-    if(event.target.password.value !== "password" && event.target.drill.value == session.drill){
-        document.getElementById("passerror").style.visibility="visible"
-        document.getElementById("phaseerror").style.visibility="hidden"
+    if(event.target.password.value !== password && event.target.drill.value == session.drill){
+      document.getElementById("passerror").style.visibility="visible"
+      document.getElementById("phaseerror").style.visibility="hidden"
     }
-    if(event.target.password.value == "password" && event.target.drill.value !== session.drill){
-        document.getElementById("passerror").style.visibility="hidden"
-        document.getElementById("phaseerror").style.visibility="visible"
+    if(event.target.password.value == password && event.target.drill.value !== session.drill){
+      document.getElementById("passerror").style.visibility="hidden"
+      document.getElementById("phaseerror").style.visibility="visible"
     }
-    if(event.target.password.value == "password" && event.target.drill.value == session.drill){
+    if(event.target.password.value == password && event.target.drill.value == session.drill){
       //console.log(session);
       session.stage = "false_alarm";
       Session.update('session', session);
