@@ -286,14 +286,15 @@ Template.summary.events({
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
   'click #cancel'(event, instance) {
-      document.getElementById("main").style.borderColor = "black";
-      Session.update('session', {
-      "stage": "drill",
+    document.getElementById("main").style.borderColor = "black";
+    Session.update('session', {
+      "stage": "login",
       "canceled": true,
       "drill": null,
       "disaster": null,
       "locations": [],
       "alerts": [],
+      "user": null,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -343,12 +344,13 @@ Template.confirmation.events({
   },
   'click #cancel'(event, instance) {
       Session.update('session', {
-      "stage": "drill",
+      "stage": "login",
       "canceled": true,
       "drill": null,
       "disaster": null,
       "locations": [],
       "alerts": [],
+      "user": null,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -379,12 +381,13 @@ Template.false_alarm.events({
     event.preventDefault();
     can_alert = false;
     Session.update('session', {
-      "stage": "drill",
+      "stage": "login",
       "canceled": false,
       "drill": null,
       "disaster": null,
       "locations": [],
       "alerts": [],
+      "user": null,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -401,12 +404,13 @@ Template.false_alarm.events({
     }
     can_alert = false;
     Session.update('session', {
-      "stage": "drill",
+      "stage": "login",
       "canceled": false,
       "drill": null,
       "disaster": null,
       "locations": [],
       "alerts": [],
+      "user": null,
       });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
