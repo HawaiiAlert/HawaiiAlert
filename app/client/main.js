@@ -27,6 +27,7 @@ var devices = {
     "radio": new Radio(),
   }
 var can_alert = false;
+var logged_in = false;
 
 function loadDriver(file_name, device){
   driver = require(file_name);
@@ -50,23 +51,43 @@ function changecolor(session) {
   }
 }
 
+
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
   session = Session.get('session');
   if(!session){
     session = {
-      "stage": "drill",
+      "stage": "login",
       "canceled": false,
       "drill": null,
       "disaster": null,
       "locations": [],
       "alerts": [],
+      "user": null,
     };
     Session.setPersistent('session', session);
   }
   BlazeLayout.render('load', {"stage":Session.get('session').stage});
 });
 
+
+/////Log in/////
+Template.login.events({
+  'submit form': function(event){
+    event.preventDefault();
+    session = Session.get('session');
+    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    if(event.target.password.value == password){
+      logged_in = true;
+      session.user = event.target.username.value;
+      session.stage = 'drill';
+      Session.update('session', session);
+      BlazeLayout.render('load', {"stage":Session.get('session').stage});
+    }else{
+      document.getElementById("passerror").style.visibility="visible";
+    }
+  },
+});
 
 
 /////Drill/////
@@ -175,6 +196,7 @@ Template.disaster.helpers({
     }
 });
 
+
 /////Location/////
 Template.location.events({
   'click #submit'(event, instance) {
@@ -213,6 +235,7 @@ Template.location.helpers({
         changecolor(Session.get('session'));
     }
 });
+
 
 /////Alerts/////
 Template.alerts.events({
@@ -253,22 +276,8 @@ Template.alerts.helpers({
     }
 });
 
-/////Summary/////
-Template.summary.helpers({
-  drill(){
-    return Session.get('session').drill;
-  },
-  disaster(){
-    return Session.get('session').disaster;
-  },
-  locations(){
-    return Session.get('session').locations;
-  },
-  alerts(){
-    return Session.get('session').alerts;
-  }
-});
 
+/////Summary/////
 Template.summary.events({
   'click #confirm'(event, instance) {
     session = Session.get('session');
@@ -290,9 +299,7 @@ Template.summary.events({
   },
 });
 
-
-/////Confirmation/////
-Template.confirmation.helpers({
+Template.summary.helpers({
   drill(){
     return Session.get('session').drill;
   },
@@ -304,13 +311,11 @@ Template.confirmation.helpers({
   },
   alerts(){
     return Session.get('session').alerts;
-  },
-  color(){
-    changecolor(Session.get('session'));
   }
 });
 
 
+/////Confirmation/////
 Template.confirmation.events({
   'submit form': function(event){
     event.preventDefault();
@@ -349,32 +354,26 @@ Template.confirmation.events({
   },
 });
 
-
-/////False Alarm/////
-Template.false_alarm.helpers({
-  radio(){
-    if(can_alert){
-      if(session.alerts.includes('Radio Alert')){
-        return loadDriver('./Radio_driver.js', devices.radio);
-      }else{
-        return "Device not selected";
-      }
-    }
+Template.confirmation.helpers({
+  drill(){
+    return Session.get('session').drill;
   },
-  text(){
-    if(can_alert){
-      if(session.alerts.includes('Text Alert')){
-        return loadDriver('./text_driver.js', devices.text);
-      }else{
-        return "Device not selected";
-      }
-    }
+  disaster(){
+    return Session.get('session').disaster;
   },
-    color(){
-        changecolor(Session.get('session'));
-    }
+  locations(){
+    return Session.get('session').locations;
+  },
+  alerts(){
+    return Session.get('session').alerts;
+  },
+  color(){
+    changecolor(Session.get('session'));
+  }
 });
 
+
+/////False Alarm/////
 Template.false_alarm.events({
   'click #return'(event, instance) {
     event.preventDefault();
@@ -411,4 +410,28 @@ Template.false_alarm.events({
       });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
+});
+
+Template.false_alarm.helpers({
+  radio(){
+    if(can_alert){
+      if(session.alerts.includes('Radio Alert')){
+        return loadDriver('./Radio_driver.js', devices.radio);
+      }else{
+        return "Device not selected";
+      }
+    }
+  },
+  text(){
+    if(can_alert){
+      if(session.alerts.includes('Text Alert')){
+        return loadDriver('./text_driver.js', devices.text);
+      }else{
+        return "Device not selected";
+      }
+    }
+  },
+    color(){
+        changecolor(Session.get('session'));
+    }
 });

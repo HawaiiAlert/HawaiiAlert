@@ -20,6 +20,15 @@
   </div>
 </template>
 
+<template name="login">
+  <h1 style="text-align: center">Please enter your log in information</h1>
+  <form style="text-align: center">
+    <strong style="font-size: medium"> Username: </strong> <input type="text" name="username">
+    <strong style="font-size: medium"> Password: </strong> <input type="password" name="password">
+    <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
+    <input type="submit" class="ui button red" value="Confirm">
+  </form>
+</template>
 
 <template name="drill">
   <h1 style="text-align: center">Is this a drill?</h1>
@@ -154,7 +163,7 @@
     <h1 style="text-align: center">Please have your second enter their password and the confirmation phrase</h1>
 
     <!--REMOVE FROM FINAL INTERFACE-->
-    <p><em>Testing: The password is currently "password", on success, selections made will be printed to the console</em></p>
+    <p><em>Testing: The default account has user name "testing" and password "password"</em></p>
 
     <div class="ui container">
       <h2 style="text-align: center">Summary</h2>
