@@ -6,6 +6,7 @@
       "contents": [
         {
           "username": "testing",
+          "admin": true,
           "password": "password"
         }
       ]

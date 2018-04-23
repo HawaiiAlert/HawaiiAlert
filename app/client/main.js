@@ -335,6 +335,8 @@ Template.confirmation.events({
       document.getElementById("phaseerror").style.visibility="visible"
     }
     if(event.target.password.value == password && event.target.drill.value == session.drill){
+      //Require second log in to be admin and different from current user
+      //Recheck that user is a valid user
       //console.log(session);
       session.stage = "false_alarm";
       Session.update('session', session);
@@ -439,3 +441,11 @@ Template.false_alarm.helpers({
         changecolor(Session.get('session'));
     }
 });
+
+
+/////Event Log/////
+Template.event_log.helpers({
+  events(){
+    return Events.findAll();
+  }
+})

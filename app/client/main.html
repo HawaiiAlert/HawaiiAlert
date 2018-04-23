@@ -20,6 +20,7 @@
   </div>
 </template>
 
+
 <template name="login">
   <h1 style="text-align: center">Please enter your log in information</h1>
   <form style="text-align: center">
@@ -29,6 +30,7 @@
     <input type="submit" class="ui button red" value="Confirm">
   </form>
 </template>
+
 
 <template name="drill">
   <h1 style="text-align: center">Is this a drill?</h1>
@@ -189,6 +191,7 @@
   {{color}}
 </template>
 
+
 <template name="false_alarm">
   <div class="ui container" style="text-align: center">
 	<!--Below should display content gotten from the objects used -->
@@ -201,4 +204,48 @@
     <a class="ui button red" id="false_alarm">False Alarm</a>
   </div>
   {{color}}
+</template>
+
+
+<template name="new_account">
+  <h1 style="text-align: center">Please enter the new username and password</h1>
+  <form style="text-align: center">
+    <strong style="font-size: medium"> Username: </strong> <input type="text" name="new_username">
+    <strong style="font-size: medium"> Password: </strong> <input type="password" name="new_password">
+    <h1 style="text-align: center">Please enter your log in information</h1>
+    <strong style="font-size: medium"> Username: </strong> <input type="text" name="username">
+    <strong style="font-size: medium"> Password: </strong> <input type="password" name="password">
+    <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
+    <input type="submit" class="ui button red" value="Confirm">
+  </form>
+</template>
+
+
+<template name="remove_account">
+  <h1 style="text-align: center">Please enter the username to be removed</h1>
+  <form style="text-align: center">
+    <strong style="font-size: medium"> Username: </strong> <input type="text" name="remove_username">
+    <h1 style="text-align: center">Please enter your log in information</h1>
+    <strong style="font-size: medium"> Username: </strong> <input type="text" name="username">
+    <strong style="font-size: medium"> Password: </strong> <input type="password" name="password">
+    <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
+    <input type="submit" class="ui button red" value="Confirm">
+  </form>
+</template>
+
+
+<template name="event_log">
+  <div class="ui container" style="text-align: center">
+    {{#each event in events }}
+      {{> event event=event }}
+    {{/each}}
+  </div>
+</template>
+
+
+<template name="event">
+  <div class="ui container" style="text-align: center">
+    <p>At {{event.time}}, the user {{event.username}} sent the following message</p>
+    <p>{{event.message}}</p>
+  </div>
 </template>

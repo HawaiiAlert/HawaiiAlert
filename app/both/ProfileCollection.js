@@ -11,33 +11,35 @@ class ProfileCollection extends BaseCollection {
   constructor() {
     super('Profile', new SimpleSchema({
       username: { type: String },
+      admin: { type: boolean },
       password: { type: String },
     }, { tracker: Tracker }));
   }
 
   define({
-           username, password,
+           username, admin, password,
          }) {
     // make sure required fields are OK.
     const checkPattern = {
-      username: String, password: String,
+      username: String, admin: boolean, password: String,
     };
-    check({ username, password }, checkPattern);
+    check({ username, boolean, password }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
     }
 
     return this._collection.insert({
-      username, password,
+      username, boolean, password,
     });
   }
 
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const username = doc.username;
+    const admin = doc.admin;
     const password = doc.password;
-    return { username, password };
+    return { username, admin, password };
   }
 }
 
