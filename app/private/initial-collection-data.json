@@ -1,0 +1,20 @@
+{
+  "comment": "Initial contents for the Profile database. For development purposes only.",
+  "collections": [
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "username": "testing",
+          "admin": true,
+          "password": "password"
+        },
+        {
+          "username": "user",
+          "admin": false,
+          "password": "password"
+        }
+      ]
+    }
+  ]
+}
