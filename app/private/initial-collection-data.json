@@ -8,6 +8,11 @@
           "username": "testing",
           "admin": true,
           "password": "password"
+        },
+        {
+          "username": "user",
+          "admin": false,
+          "password": "password"
         }
       ]
     }

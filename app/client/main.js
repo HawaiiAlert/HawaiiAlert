@@ -68,6 +68,10 @@ Template.load.events({
   'click #alert'(event, instance) {
     session = Session.get('session');
     session.stage = 'drill';
+    session.drill = null;
+    session.disaster = null;
+    session.locations = [];
+    session.alerts = [];
     Session.update('session', session);
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -364,7 +368,8 @@ Template.confirmation.events({
   'submit form': function(event){
     event.preventDefault();
     session = Session.get('session');
-    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
+    var password = profile.password;
     if(event.target.password.value !== password && event.target.drill.value !== session.drill){
       document.getElementById("passerror").style.visibility="visible"
       document.getElementById("phaseerror").style.visibility="visible"
@@ -377,16 +382,14 @@ Template.confirmation.events({
       document.getElementById("passerror").style.visibility="hidden"
       document.getElementById("phaseerror").style.visibility="visible"
     }
-    if(event.target.password.value == password && event.target.drill.value == session.drill){
-      /**Require second log in to be admin and different from current user
-      Recheck that user is a valid user*/
+    if(event.target.password.value == password && event.target.drill.value == session.drill && profile.admin  && profile.username != session.user){
       //console.log(session);
       session.stage = "false_alarm";
       Session.update('session', session);
       can_alert = true;
       const username = session.user;
       const message = session.drill + ":\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
-      const type = "sent the message:"
+      const type = "authorized by " + profile.username + " sent the message:"
       const time =  new Date().toLocaleString();
       Events.define({ username, message, type, time });
       BlazeLayout.render('load', {"stage":Session.get('session').stage});
@@ -501,15 +504,17 @@ Template.new_account.events({
   'submit form'(event, instance) {
     event.preventDefault();
     session = Session.get('session');
-    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
+    var password = profile.password;
     if(event.target.password.value !== password){
       document.getElementById("passerror").style.visibility="visible"
     }
-    if(event.target.password.value == password){
-      /**must be admin
-      add new account
-      Recheck that user is a valid user*/
-      const username = session.user;
+    if(event.target.password.value == password && profile.admin && profile.username == session.user){
+      var username = event.target.new_username.value;
+      const admin = event.target.new_admin.checked;
+      const password = event.target.new_password.value;
+      Profiles.define({ username, admin, password, });
+      username = session.user;
       const message = event.target.new_username.value;
       const type = "added the new user:";
       const time = new Date().toLocaleString();
@@ -525,14 +530,13 @@ Template.remove_account.events({
   'submit form'(event, instance) {
     event.preventDefault();
     session = Session.get('session');
-    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
+    var password = profile.password;
     if(event.target.password.value !== password){
       document.getElementById("passerror").style.visibility="visible"
     }
-    if(event.target.password.value == password){
-      /**must be admin
-      remove account
-      Recheck that user is a valid user*/
+    if(event.target.password.value == password && profile.admin && profile.username == session.user){
+      Profiles.removeIt({ username: event.target.remove_username.value, });
       const username = session.user;
       const message = event.target.remove_username.value;
       const type = "removed the user:";
