@@ -12,30 +12,28 @@ class EventCollection extends BaseCollection {
     super('Event', new SimpleSchema({
       username: { type: String },
       message: { type: String },
+      type: { type: String },
       time: { type: String },
     }, { tracker: Tracker }));
   }
 
-  define({
-           username, message, time,
-         }) {
+  define({ username, message, type, time, }) {
     // make sure required fields are OK.
     const checkPattern = {
-      username: String, message: String, time: String,
+      username: String, message: String, type: String, time: String,
     };
-    check({ username, message, time }, checkPattern);
+    check({ username, message, type, time }, checkPattern);
 
-    return this._collection.insert({
-      username, message, time,
-    });
+    return this._collection.insert({ username, message, type, time, });
   }
 
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const username = doc.username;
     const message = doc.message;
+    const type = doc.type;
     const time = doc.time;
-    return { username, message, time };
+    return { username, message, type, time };
   }
 }
 

@@ -10,15 +10,6 @@ import { Text } from './text.js';
 import { Radio } from './Radio.js';
 
 
-/*The following will store options, the page will then generate based on them, allowing new options to be added quickly*/
-/*
-var options = {
-  "drill" = {},
-  "disaster" = {},
-  "locations" = {},
-  "alerts" = {},
-};
-*/
 var session;
 var driver;
 var device;
@@ -28,6 +19,7 @@ var devices = {
   }
 var can_alert = false;
 var logged_in = false;
+
 
 function loadDriver(file_name, device){
   driver = require(file_name);
@@ -71,7 +63,58 @@ Template.interface.onCreated(function onCreated(){
 });
 
 
+/////Load/////
+Template.load.events({
+  'click #alert'(event, instance) {
+    session = Session.get('session');
+    session.stage = 'drill';
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
+  },
+  'click #events'(event, instance) {
+    session = Session.get('session');
+    session.stage = 'event_log';
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
+  },
+  'click #add_user'(event, instance) {
+    session = Session.get('session');
+    session.stage = 'new_account';
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
+  },
+  'click #remove_user'(event, instance) {
+    session = Session.get('session');
+    session.stage = 'remove_account';
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
+  },
+  'click #logout'(event, instance) {
+    session = Session.get('session');
+    session.stage = 'login';
+    session.user = null;
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
+  },
+});
+
+Template.load.helpers({
+  isUser(){
+    return Session.get('session').user;
+  },
+});
+
+
 /////Log in/////
+Template.login.onCreated(function onCreated(){
+  session = Session.get('session');
+  if(_.filter(Profiles.findAll(), profile => profile.username == session.user).length > 0){
+    session.stage = 'drill';
+    Session.update('session', session);
+    BlazeLayout.render('load', {"stage":Session.get('session').stage});
+  }
+});
+
 Template.login.events({
   'submit form': function(event){
     event.preventDefault();
@@ -118,7 +161,7 @@ Template.drill.helpers({
   },
   color(){
     changecolor(Session.get('session'));
-  }
+  },
 });
 
 
@@ -193,7 +236,7 @@ Template.disaster.events({
 Template.disaster.helpers({
     color(){
         changecolor(Session.get('session'));
-    }
+    },
 });
 
 
@@ -233,7 +276,7 @@ Template.location.events({
 Template.location.helpers({
     color(){
         changecolor(Session.get('session'));
-    }
+    },
 });
 
 
@@ -273,7 +316,7 @@ Template.alerts.events({
 Template.alerts.helpers({
     color(){
         changecolor(Session.get('session'));
-    }
+    },
 });
 
 
@@ -294,7 +337,7 @@ Template.summary.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "user": null,
+      "user": session.user,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -312,7 +355,7 @@ Template.summary.helpers({
   },
   alerts(){
     return Session.get('session').alerts;
-  }
+  },
 });
 
 
@@ -335,12 +378,17 @@ Template.confirmation.events({
       document.getElementById("phaseerror").style.visibility="visible"
     }
     if(event.target.password.value == password && event.target.drill.value == session.drill){
-      //Require second log in to be admin and different from current user
-      //Recheck that user is a valid user
+      /**Require second log in to be admin and different from current user
+      Recheck that user is a valid user*/
       //console.log(session);
       session.stage = "false_alarm";
       Session.update('session', session);
       can_alert = true;
+      const username = session.user;
+      const message = session.drill + ":\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
+      const type = "sent the message:"
+      const time =  new Date().toLocaleString();
+      Events.define({ username, message, type, time });
       BlazeLayout.render('load', {"stage":Session.get('session').stage});
     }
   },
@@ -352,7 +400,7 @@ Template.confirmation.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "user": null,
+      "user": session.user,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -373,7 +421,7 @@ Template.confirmation.helpers({
   },
   color(){
     changecolor(Session.get('session'));
-  }
+  },
 });
 
 
@@ -389,7 +437,7 @@ Template.false_alarm.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "user": null,
+      "user": session.user,
     });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -405,6 +453,11 @@ Template.false_alarm.events({
       loadDriver('./Radio_driver.js', devices.radio);
     }
     can_alert = false;
+    const username = session.user;
+    const message = "False Alarm:\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
+    const type = "sent the message:"
+    const time = new Date().toLocaleString();
+    Events.define({ username, message, type, time });
     Session.update('session', {
       "stage": "login",
       "canceled": false,
@@ -412,7 +465,7 @@ Template.false_alarm.events({
       "disaster": null,
       "locations": [],
       "alerts": [],
-      "user": null,
+      "user": session.user,
       });
     BlazeLayout.render('load', {"stage":Session.get('session').stage});
   },
@@ -437,9 +490,57 @@ Template.false_alarm.helpers({
       }
     }
   },
-    color(){
-        changecolor(Session.get('session'));
+  color(){
+      changecolor(Session.get('session'));
+  },
+});
+
+
+/////New Account/////
+Template.new_account.events({
+  'submit form'(event, instance) {
+    event.preventDefault();
+    session = Session.get('session');
+    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    if(event.target.password.value !== password){
+      document.getElementById("passerror").style.visibility="visible"
     }
+    if(event.target.password.value == password){
+      /**must be admin
+      add new account
+      Recheck that user is a valid user*/
+      const username = session.user;
+      const message = event.target.new_username.value;
+      const type = "added the new user:";
+      const time = new Date().toLocaleString();
+      Events.define({ username, message, type, time, });
+      BlazeLayout.render('load', {"stage":Session.get('session').stage});
+    }
+  },
+});
+
+
+/////Remove Account/////
+Template.remove_account.events({
+  'submit form'(event, instance) {
+    event.preventDefault();
+    session = Session.get('session');
+    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
+    if(event.target.password.value !== password){
+      document.getElementById("passerror").style.visibility="visible"
+    }
+    if(event.target.password.value == password){
+      /**must be admin
+      remove account
+      Recheck that user is a valid user*/
+      const username = session.user;
+      const message = event.target.remove_username.value;
+      const type = "removed the user:";
+      const time = new Date().toLocaleString();
+      Events.define({ username, message, type, time });
+      BlazeLayout.render('load', {"stage":Session.get('session').stage});
+    }
+  },
 });
 
 
@@ -447,5 +548,5 @@ Template.false_alarm.helpers({
 Template.event_log.helpers({
   events(){
     return Events.findAll();
-  }
+  },
 })

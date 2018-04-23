@@ -15,6 +15,25 @@
 
 
 <template name="load">
+  {{#if isUser}}
+    <div class="ui menu">
+      <div class="right item">
+          <div class="ui button" id="alert">Alert System</div>
+      </div>
+      <div class="item">
+          <div class="ui button" id="events">Event Log</div>
+      </div>
+      <div class="item">
+          <div class="ui button" id="add_user">Add User</div>
+      </div>
+      <div class="item">
+          <div class="ui button" id="remove_user">Remove User</div>
+      </div>
+      <div class="item">
+          <div class="ui button" id="logout">Log Out</div>
+      </div>
+    </div>
+  {{/if}}
   <div id="main" class="ui container" style="margin-top:10%;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
     {{>Template.dynamic template=stage}}
   </div>
@@ -213,6 +232,7 @@
     <strong style="font-size: medium"> Username: </strong> <input type="text" name="new_username">
     <strong style="font-size: medium"> Password: </strong> <input type="password" name="new_password">
     <h1 style="text-align: center">Please enter your log in information</h1>
+    <h2 style="text-align: center">You must be an admin to use this function</h2>
     <strong style="font-size: medium"> Username: </strong> <input type="text" name="username">
     <strong style="font-size: medium"> Password: </strong> <input type="password" name="password">
     <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
@@ -226,6 +246,7 @@
   <form style="text-align: center">
     <strong style="font-size: medium"> Username: </strong> <input type="text" name="remove_username">
     <h1 style="text-align: center">Please enter your log in information</h1>
+    <h2 style="text-align: center">You must be an admin to use this function</h2>
     <strong style="font-size: medium"> Username: </strong> <input type="text" name="username">
     <strong style="font-size: medium"> Password: </strong> <input type="password" name="password">
     <p id="passerror" style="color:red;visibility: hidden">*incorrect password </p>
@@ -236,16 +257,16 @@
 
 <template name="event_log">
   <div class="ui container" style="text-align: center">
-    {{#each event in events }}
-      {{> event event=event }}
+    {{#each event_item in events }}
+      {{> event event_item=event_item }}
     {{/each}}
   </div>
 </template>
 
 
 <template name="event">
-  <div class="ui container" style="text-align: center">
-    <p>At {{event.time}}, the user {{event.username}} sent the following message</p>
-    <p>{{event.message}}</p>
+  <div class="ui container" style="text-align: center;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
+    <p>At {{event_item.time}}, the user {{event_item.username}} {{event_item.type}}</p>
+    <p>{{event_item.message}}</p>
   </div>
 </template>
