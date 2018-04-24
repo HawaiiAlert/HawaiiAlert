@@ -8,6 +8,7 @@ import { Events } from '/both/EventCollection';
 import './main.html';
 import { Text } from './text.js';
 import { Radio } from './Radio.js';
+import { Siren } from './Siren.js';
 
 
 var session;
@@ -16,6 +17,7 @@ var device;
 var devices = {
     "text": new Text(),
     "radio": new Radio(),
+    "siren": new Siren(),
   }
 var can_alert = false;
 var logged_in = false;
@@ -455,6 +457,9 @@ Template.false_alarm.events({
     if(session.alerts.includes('Radio Alert')){
       loadDriver('./Radio_driver.js', devices.radio);
     }
+    if(session.alerts.includes('Warning Sirens')){
+      loadDriver('./Siren_driver.js', devices.siren);
+    }
     can_alert = false;
     const username = session.user;
     const message = "False Alarm:\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
@@ -489,6 +494,15 @@ Template.false_alarm.helpers({
       if(session.alerts.includes('Text Alert')){
         return loadDriver('./text_driver.js', devices.text);
       }else{
+        return "Device not selected";
+      }
+    }
+  },
+  siren(){
+    if(can_alert){
+      if(session.alerts.includes("Warning Sirens")){
+        return loadDriver("./Siren_driver.js", devices.siren);
+      }else {
         return "Device not selected";
       }
     }
