@@ -10,6 +10,7 @@ import { Text } from './text.js';
 import { Radio } from './Radio.js';
 import { Siren } from './Siren.js';
 import { Email } from './Email.js';
+import { TV } from './TV.js';
 
 
 var session;
@@ -20,6 +21,7 @@ var devices = {
     "radio": new Radio(),
     "siren": new Siren(),
     "email": new Email(),
+	"tv": new TV(),
   }
 var can_alert = false;
 var logged_in = false;
@@ -468,6 +470,9 @@ Template.false_alarm.events({
     if(session.alerts.includes('Email Message')){
       loadDriver('./Email_driver.js',devices.email);
     }
+    if(session.alerts.includes('TV Alert')){
+      loadDriver('./TV_driver.js',devices.tv);
+    }
     can_alert = false;
     const username = session.user;
     const message = "False Alarm:\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
@@ -519,6 +524,15 @@ Template.false_alarm.helpers({
     if(can_alert){
         if(session.alerts.includes("Email Message")){
             return loadDriver("./Email_driver.js", devices.email);
+        }else {
+            return "Device not selected";
+        }
+    }
+  },
+  tv(){
+    if(can_alert){
+        if(session.alerts.includes("TV Alert")){
+            return loadDriver("./TV_driver.js", devices.tv);
         }else {
             return "Device not selected";
         }
