@@ -1,0 +1,27 @@
+{
+  "comment": "Initial contents for the contact databases. For development purposes only.",
+  "collections": [
+    {
+      "name": "EmailCollection",
+      "contents": [
+        {
+          "email": "testing123@testing.com"
+        },
+        {
+          "email": "testing456@testing.com"
+        }
+      ]
+    },
+    {
+      "name": "TextCollection",
+      "contents": [
+        {
+          "text": "XXXXXXXXXX"
+        },
+        {
+          "text": "ZZZZZZZZZZ"
+        }
+      ]
+    }
+  ]
+}
