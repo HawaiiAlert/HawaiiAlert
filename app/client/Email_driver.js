@@ -35,7 +35,7 @@ exports.warningON = function(device, devicemode){
         var cancel = commands.canceled;
         device.setMode(devicemode);
         if(cancel){
-            device.send("Email Alert\nThe preceding message, shown again below, was a False Alarm", composeMessage(commands));
+            device.send("\nThe preceding message, shown again below, was a False Alarm", composeMessage(commands));
         }else if (devicemode){
             device.send("Email Alert", composeMessage(commands));
             if(device.getMode() == "A Drill"){

@@ -518,13 +518,6 @@ Template.false_alarm.helpers({
   email(){
     if(can_alert){
         if(session.alerts.includes("Email Message")){
-            Meteor.call(
-                'sendEmail',
-                'hawaii alert <ics414hawaiialert@gmail.com>',
-                'ics414hawaiialert@gmail.com',
-                'Hello from Meteor!',
-                'This is a test of Email.send.'
-            );
             return loadDriver("./Email_driver.js", devices.email);
         }else {
             return "Device not selected";

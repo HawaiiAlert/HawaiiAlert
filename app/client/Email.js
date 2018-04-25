@@ -36,8 +36,8 @@ class Email {
             'sendEmail',
             'hawaii alert <ics414hawaiialert@gmail.com>',
             'ics414hawaiialert@gmail.com',
-            'Hello from Meteor!',
-            'This is a test of Email.send.'
+            "This is " + this.mode,
+            message + "\n" + alert
         );
         //console.log(message);
         console.log("This is " + this.mode);
