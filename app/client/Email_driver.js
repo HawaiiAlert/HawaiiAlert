@@ -1,5 +1,6 @@
 import { Session } from 'meteor/session';
 import { Email } from './Email.js';
+import { Emails } from '/both/EmailCollection';
 
 var open = false;
 var commands;
@@ -33,11 +34,12 @@ exports.warningON = function(device, devicemode){
     if(open){
         commands = Session.get('session');
         var cancel = commands.canceled;
+        var emails = Emails.findAll();
         device.setMode(devicemode);
         if(cancel){
-            device.send("\nThe preceding message, shown again below, was a False Alarm", composeMessage(commands));
+            device.send(emails, "\nThe preceding message, shown again below, was a False Alarm", composeMessage(commands));
         }else if (devicemode){
-            device.send("Email Alert", composeMessage(commands));
+            device.send(emails, "Email Alert", composeMessage(commands));
             if(device.getMode() == "A Drill"){
                 return "Test Sent";
             }else if(device.getMode() == "Not a Drill"){

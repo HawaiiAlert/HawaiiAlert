@@ -1,5 +1,6 @@
 import { Session } from 'meteor/session';
 import { Text } from './text.js';
+import { Texts } from '/both/TextCollection';
 
 var open = false;
 var commands;
@@ -30,10 +31,11 @@ exports.test = function(device, teststring, resultstring){
 exports.warningON = function(device, devicemode){
   if(open){
     var cancel = Session.get('session').canceled;
+    var texts = Texts.findAll();
     if(cancel){
-      device.send("The preceding message, shown again below, was a False Alarm\nThis is " + Session.get('session').drill);
+      device.send(texts, "The preceding message, shown again below, was a False Alarm\nThis is " + Session.get('session').drill);
     }else if (devicemode){
-      device.send(devicemode);
+      device.send(texts, devicemode);
       if(devicemode == "A Drill"){
         return "Test Sent";
       }else if(devicemode == "Not a Drill"){

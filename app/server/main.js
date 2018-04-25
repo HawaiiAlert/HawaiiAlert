@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Profiles } from '/both/ProfileCollection';
+import { Texts } from '/both/TextCollection';
+import { Emails } from '/both/EmailCollection';
 import { _ } from 'meteor/underscore';
 import '/both/BaseCollection';
 import '/both/ProfileCollection';
@@ -16,17 +18,23 @@ function restoreCollection(collection, restoreJSON) {
 
 
 Meteor.startup(() => {
-    process.env.MAIL_URL = "smtps://ics414hawaiialert@gmail.com:testemail@smtp.gmail.com:465"
+  process.env.MAIL_URL = "smtps://ics414hawaiialert@gmail.com:testemail@smtp.gmail.com:465"
   /** Only initialize database if it's empty. */
+  const restoreJSON = JSON.parse(Assets.getText('initial-collection-data.json'));
+  const restoreJSONpriv = JSON.parse(Assets.getText('initial-contact-collection.json'));
   if (Profiles.count() == 0) {
-    const restoreJSON = JSON.parse(Assets.getText('initial-collection-data.json'));
     restoreCollection(Profiles, restoreJSON);
+  }
+  if (Emails.count() == 0) {
+    restoreCollection(Emails, restoreJSONpriv);
+  }
+  if (Texts.count() == 0) {
+    restoreCollection(Texts, restoreJSONpriv);
   }
 });
 
 Meteor.methods({
-    sendEmail(to, from, subject, text) {
-
-        Email.send({ to, from, subject, text });
-    }
+  sendEmail(to, from, subject, text) {
+    Email.send({ to, from, subject, text });
+  }
 });

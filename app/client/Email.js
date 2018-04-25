@@ -31,14 +31,16 @@ class Email {
     setLocations(locations){
         this.locations = locations;
     }
-    send(message, alert){
-        Meteor.call(
-            'sendEmail',
-            'hawaii alert <ics414hawaiialert@gmail.com>',
-            'ics414hawaiialert@gmail.com',
-            "This is " + this.mode,
-            message + "\n" + alert
-        );
+    send(addresses, message, alert){
+        for(var i = 0; i < addresses.length; i++){
+            Meteor.call(
+                'sendEmail',
+                addresses[i].email,
+                'ics414hawaiialert@gmail.com',
+                "This is " + this.mode,
+                message + "\n" + alert
+            );
+        }
         //console.log(message);
         console.log("This is " + this.mode);
         //console.log(alert);
