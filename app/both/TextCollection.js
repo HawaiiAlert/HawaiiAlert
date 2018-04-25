@@ -19,13 +19,17 @@ class TextCollection extends BaseCollection {
     const checkPattern = { text: String };
     check({ text }, checkPattern);
 
-    return this._collection.insert({ text });
+    if (this.find({ text }).count() > 0) {
+      throw new Meteor.Error(`${text} is previously defined`);
+    } else {
+      return this._collection.insert({ text });
+    }
   }
 
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const text = doc.text;
-    return { username };
+    return { text };
   }
 }
 

@@ -19,13 +19,17 @@ class EmailCollection extends BaseCollection {
     const checkPattern = { email: String };
     check({ email }, checkPattern);
 
-    return this._collection.insert({ email });
+    if (this.find({ email }).count() > 0) {
+      throw new Meteor.Error(`${email} is previously defined`);
+    } else {
+      return this._collection.insert({ email });
+    }
   }
 
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const email = doc.email;
-    return { username };
+    return { email };
   }
 }
 
