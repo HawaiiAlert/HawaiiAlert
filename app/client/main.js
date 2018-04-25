@@ -9,6 +9,7 @@ import './main.html';
 import { Text } from './text.js';
 import { Radio } from './Radio.js';
 import { Siren } from './Siren.js';
+import { Email } from './Email.js';
 
 
 var session;
@@ -18,6 +19,7 @@ var devices = {
     "text": new Text(),
     "radio": new Radio(),
     "siren": new Siren(),
+    "email": new Email(),
   }
 var can_alert = false;
 var logged_in = false;
@@ -303,6 +305,9 @@ Template.alerts.events({
     if (siren.checked) {
       session.alerts.push("Warning Sirens");
     }
+    if(email.checked) {
+      session.alerts.push("Email Message")
+    }
     if (session.alerts.length <= 0) {
       session.stage = "alerts";
     }
@@ -460,6 +465,9 @@ Template.false_alarm.events({
     if(session.alerts.includes('Warning Sirens')){
       loadDriver('./Siren_driver.js', devices.siren);
     }
+    if(session.alerts.includes('Email Message')){
+      loadDriver('./Email_driver.js',devices.email);
+    }
     can_alert = false;
     const username = session.user;
     const message = "False Alarm:\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
@@ -505,6 +513,22 @@ Template.false_alarm.helpers({
       }else {
         return "Device not selected";
       }
+    }
+  },
+  email(){
+    if(can_alert){
+        if(session.alerts.includes("Email Message")){
+            Meteor.call(
+                'sendEmail',
+                'hawaii alert <ics414hawaiialert@gmail.com>',
+                'ics414hawaiialert@gmail.com',
+                'Hello from Meteor!',
+                'This is a test of Email.send.'
+            );
+            return loadDriver("./Email_driver.js", devices.email);
+        }else {
+            return "Device not selected";
+        }
     }
   },
   color(){
