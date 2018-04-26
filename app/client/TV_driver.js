@@ -44,7 +44,7 @@ function composeMessage(commands){
   return "There is a " + commands.disaster + " alert for the following area(s): \n " + commands.locations + "\nPlease seek shelter immediately";
 }
 
-exports.test = function(device, /*teststring,*/ resultstring){
+exports.test = function(device, teststring, resultstring){
   if(open){
     //commands = Session.get(teststring);
     return composeMessage(commands) == resultstring;
