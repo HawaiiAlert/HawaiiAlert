@@ -188,10 +188,6 @@
 <template name="confirmation">
   <div class="ui container">
     <h1 style="text-align: center">Please have your second enter their password and the confirmation phrase</h1>
-
-    <!--REMOVE FROM FINAL INTERFACE-->
-    <p><em>Testing: The default account has user name "testing" and password "password"</em></p>
-
     <div class="ui container">
       <h2 style="text-align: center">Summary</h2>
       <div style="text-align: center">
@@ -276,7 +272,7 @@
 
 <template name="event">
   <div class="ui container" style="text-align: center;border-radius:3px;border: 3px solid black;padding: 20px 0px 20px 0px">
-    <p>At {{event_item.time}}, the user {{event_item.username}} {{event_item.type}}</p>
+    <p>At {{event_item.time}}, the user [{{event_item.username}}] {{event_item.type}}</p>
     <p>{{event_item.message}}</p>
   </div>
 </template>

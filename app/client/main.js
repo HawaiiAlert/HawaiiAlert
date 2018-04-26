@@ -393,7 +393,7 @@ Template.confirmation.events({
         can_alert = true;
         const username = session.user;
         const message = session.drill + ":\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
-        const type = "authorized by " + profile.username + " sent the message:"
+        const type = "authorized by [" + profile.username + "] sent the message:"
         const time =  new Date().toLocaleString();
         Events.define({ username, message, type, time });
         BlazeLayout.render('load', {"stage":Session.get('session').stage});
