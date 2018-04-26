@@ -16,12 +16,14 @@ function restoreCollection(collection, restoreJSON) {
   _.each(definitions, definition => collection.define(definition));
 }
 
+var sender;
 
 Meteor.startup(() => {
-  process.env.MAIL_URL = "smtps://ics414hawaiialert@gmail.com:testemail@smtp.gmail.com:465"
   /** Only initialize database if it's empty. */
   const restoreJSON = JSON.parse(Assets.getText('initial-collection-data.json'));
   const restoreJSONpriv = JSON.parse(Assets.getText('initial-contact-collection.json'));
+  process.env.MAIL_URL = restoreJSON.mail_url;
+  sender = restoreJSON.sender_email;
   if (Profiles.count() == 0) {
     restoreCollection(Profiles, restoreJSON);
   }
@@ -34,7 +36,7 @@ Meteor.startup(() => {
 });
 
 Meteor.methods({
-  sendEmail(to, from, subject, text) {
-    Email.send({ to, from, subject, text });
+  sendEmail(to, subject, text) {
+    Email.send({ to, sender, subject, text });
   }
 });

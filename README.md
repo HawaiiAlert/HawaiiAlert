@@ -1,11 +1,12 @@
 # HawaiiAlert
 An app to improve on Hawaii's disaster alert systems
 
-To install
+To install:
 1. [Install Meteor](https://www.meteor.com/install).
 1. Download, or fork and clone, the repository to your computer.
 1. Open a terminal and `cd` to the `app/` directory.
 1. Open `app/private/initial-contact-collection.json` and replace the sample data with any email accounts or phone numbers you would like to use the system with.
+1. Open `app/private/initial-collection-data.json` and replace the `mail_url` and `sender_email` with the information for the address you wish to send from.
 1. Run `meteor npm install`.
 1. Run `meteor run`.
 1. The app will be running at [localhost:3000](http://localhost:3000).

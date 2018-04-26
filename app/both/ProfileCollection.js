@@ -22,6 +22,9 @@ class ProfileCollection extends BaseCollection {
       username: String, admin: Boolean, password: String,
     };
     check({ username, admin, password }, checkPattern);
+    var md5 = require('md5');
+    const hashPass = md5(password);
+    password = hashPass;
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);

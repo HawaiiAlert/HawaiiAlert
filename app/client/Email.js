@@ -36,7 +36,6 @@ class Email {
             Meteor.call(
                 'sendEmail',
                 addresses[i].email,
-                'ics414hawaiialert@gmail.com',
                 "This is " + this.mode,
                 message + "\n" + alert
             );

@@ -49,6 +49,13 @@ function changecolor(session) {
   }
 }
 
+function checkPass(username, pass) {
+  var userPass = _.filter(Profiles.findAll(), profile => profile.username == username)[0].password;
+  var md5 = require('md5');
+  var hashPass = md5(pass);
+  return (userPass == hashPass);
+}
+
 
 /////Interface/////
 Template.interface.onCreated(function onCreated(){
@@ -129,8 +136,7 @@ Template.login.events({
   'submit form': function(event){
     event.preventDefault();
     session = Session.get('session');
-    var password = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0].password;
-    if(event.target.password.value == password){
+    if(checkPass(event.target.username.value, event.target.password.value)){
       logged_in = true;
       session.user = event.target.username.value;
       session.stage = 'drill';
@@ -377,31 +383,28 @@ Template.confirmation.events({
   'submit form': function(event){
     event.preventDefault();
     session = Session.get('session');
-    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
-    var password = profile.password;
-    if(event.target.password.value !== password && event.target.drill.value !== session.drill){
-      document.getElementById("passerror").style.visibility="visible"
-      document.getElementById("phaseerror").style.visibility="visible"
+    if(checkPass(event.target.username.value, event.target.password.value)){
+      document.getElementById("passerror").style.visibility="hidden";
+      var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
+      if(event.target.drill.value == session.drill && profile.admin  && profile.username != session.user){
+        //console.log(session);
+        session.stage = "false_alarm";
+        Session.update('session', session);
+        can_alert = true;
+        const username = session.user;
+        const message = session.drill + ":\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
+        const type = "authorized by " + profile.username + " sent the message:"
+        const time =  new Date().toLocaleString();
+        Events.define({ username, message, type, time });
+        BlazeLayout.render('load', {"stage":Session.get('session').stage});
+      }
+    }else{
+      document.getElementById("passerror").style.visibility="visible";
     }
-    if(event.target.password.value !== password && event.target.drill.value == session.drill){
-      document.getElementById("passerror").style.visibility="visible"
-      document.getElementById("phaseerror").style.visibility="hidden"
-    }
-    if(event.target.password.value == password && event.target.drill.value !== session.drill){
-      document.getElementById("passerror").style.visibility="hidden"
-      document.getElementById("phaseerror").style.visibility="visible"
-    }
-    if(event.target.password.value == password && event.target.drill.value == session.drill && profile.admin  && profile.username != session.user){
-      //console.log(session);
-      session.stage = "false_alarm";
-      Session.update('session', session);
-      can_alert = true;
-      const username = session.user;
-      const message = session.drill + ":\nDisaster: " + session.disaster + "\nLocation: " + session.locations + "\nAlerts: " + session.alerts;
-      const type = "authorized by " + profile.username + " sent the message:"
-      const time =  new Date().toLocaleString();
-      Events.define({ username, message, type, time });
-      BlazeLayout.render('load', {"stage":Session.get('session').stage});
+    if(event.target.drill.value == session.drill){
+      document.getElementById("phaseerror").style.visibility="hidden";
+    }else{
+      document.getElementById("phaseerror").style.visibility="visible";
     }
   },
   'click #cancel'(event, instance) {
@@ -549,22 +552,23 @@ Template.new_account.events({
   'submit form'(event, instance) {
     event.preventDefault();
     session = Session.get('session');
-    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
-    var password = profile.password;
-    if(event.target.password.value !== password){
-      document.getElementById("passerror").style.visibility="visible"
-    }
-    if(event.target.password.value == password && profile.admin && profile.username == session.user){
-      var username = event.target.new_username.value;
-      const admin = event.target.new_admin.checked;
-      const password = event.target.new_password.value;
-      Profiles.define({ username, admin, password, });
-      username = session.user;
-      const message = event.target.new_username.value;
-      const type = "added the new user:";
-      const time = new Date().toLocaleString();
-      Events.define({ username, message, type, time, });
-      BlazeLayout.render('load', {"stage":Session.get('session').stage});
+    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0];
+    if(checkPass(event.target.username.value, event.target.password.value)){
+      document.getElementById("passerror").style.visibility="hidden";
+      if(profile.admin && profile.username == session.user){
+        var username = event.target.new_username.value;
+        const admin = event.target.new_admin.checked;
+        const password = event.target.new_password.value;
+        Profiles.define({ username, admin, password, });
+        username = session.user;
+        const message = event.target.new_username.value;
+        const type = "added the new user:";
+        const time = new Date().toLocaleString();
+        Events.define({ username, message, type, time, });
+        BlazeLayout.render('load', {"stage":Session.get('session').stage});
+      }
+    }else{
+      document.getElementById("passerror").style.visibility="visible";
     }
   },
 });
@@ -575,19 +579,20 @@ Template.remove_account.events({
   'submit form'(event, instance) {
     event.preventDefault();
     session = Session.get('session');
-    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0]
-    var password = profile.password;
-    if(event.target.password.value !== password){
-      document.getElementById("passerror").style.visibility="visible"
-    }
-    if(event.target.password.value == password && profile.admin && profile.username == session.user){
-      Profiles.removeIt({ username: event.target.remove_username.value, });
-      const username = session.user;
-      const message = event.target.remove_username.value;
-      const type = "removed the user:";
-      const time = new Date().toLocaleString();
-      Events.define({ username, message, type, time });
-      BlazeLayout.render('load', {"stage":Session.get('session').stage});
+    var profile = _.filter(Profiles.findAll(), profile => profile.username == event.target.username.value)[0];
+    if(checkPass(event.target.username.value, event.target.password.value)){
+      document.getElementById("passerror").style.visibility="hidden";
+      if(profile.admin && profile.username == session.user){
+        Profiles.removeIt({ username: event.target.remove_username.value, });
+        const username = session.user;
+        const message = event.target.remove_username.value;
+        const type = "removed the user:";
+        const time = new Date().toLocaleString();
+        Events.define({ username, message, type, time });
+        BlazeLayout.render('load', {"stage":Session.get('session').stage});
+      }
+    }else{
+      document.getElementById("passerror").style.visibility="visible";
     }
   },
 });

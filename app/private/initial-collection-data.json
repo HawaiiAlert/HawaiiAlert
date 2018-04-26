@@ -1,5 +1,7 @@
 {
   "comment": "Initial contents for the Profile database. For development purposes only.",
+  "mail_url": "smtps://ics414hawaiialert@gmail.com:testemail@smtp.gmail.com:465",
+  "sender_email": "ics414hawaiialert@gmail.com",
   "collections": [
     {
       "name": "ProfileCollection",

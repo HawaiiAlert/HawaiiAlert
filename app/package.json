@@ -6,6 +6,10 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "charenc": "0.0.2",
+    "crypt": "0.0.2",
+    "is-buffer": "^2.0.2",
+    "md5": "^2.2.1",
     "meteor-node-stubs": "^0.3.2",
     "simpl-schema": "^1.5.0"
   }
