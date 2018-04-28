@@ -4,7 +4,7 @@
 *          conduct the test uses different syntax than meteor. If you don't do this, whatever you're trying to do will not work.
 */
 
-/*module.exports =*/ class TV {
+module.exports = class TV {
   constructor(mode, disaster, locations) {
     this.mode = mode;
     this.disaster = disaster;
@@ -34,4 +34,4 @@
     console.log(alert);
   }
 }
-export { TV }
+//export { TV }

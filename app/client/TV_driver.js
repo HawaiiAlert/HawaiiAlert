@@ -46,16 +46,16 @@ function composeMessage(commands){
 
 exports.test = function(device, teststring, resultstring){
   if(open){
-    //commands = Session.get(teststring);
-    return composeMessage(commands) == resultstring;
+    //commands = Session.get(teststring);		//done in configure()
+    return composeMessage(this.commands) == resultstring;
   }
 }
 
 exports.warningON = function(device, devicemode){
   if(open){
-    //commands = Session.get('session');
-    var cancel = commands.canceled;
-    //device.setMode(devicemode);
+    //commands = Session.get('session');		//done in configure()	
+    var cancel = this.commands.canceled;
+    //device.setMode(devicemode);				//done in configure()
     if(cancel){
       device.send("TV Alert\nThe preceding message, shown again below, was a False Alarm", composeMessage(commands));
     }else if (devicemode){
