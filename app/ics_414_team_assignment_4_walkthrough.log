@@ -1,0 +1,1589 @@
+kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:517 There is no route for the path: /
+Router._notfoundRoute @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:517
+(anonymous) @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:705
+(anonymous) @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:1488
+nextEnter @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:1320
+page.dispatch @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:1326
+page.replace @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:1289
+self._page.(anonymous function) @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:552
+page.start @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:1182
+page @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:1116
+Router.initialize @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:561
+(anonymous) @ kadira_flow-router.js?hash=af9840a46f01fd4f18014a94ff9b1eb6663a749a:981
+maybeReady @ meteor.js?hash=6d285d84547b3dad9717a7c89c664b61b45ea3d8:821
+loadingCompleted @ meteor.js?hash=6d285d84547b3dad9717a7c89c664b61b45ea3d8:833
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Kauai
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Kauai
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Kauai
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Kauai
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Maui
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Maui
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Maui,Hawaii Island
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Maui,Hawaii Island
+Email.js:44 This is A Drill
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Maui,Hawaii Island
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+main.js:53 Uncaught TypeError: Cannot read property 'password' of undefined
+    at checkPass (main.js:53)
+    at Object.submit form (main.js:386)
+    at blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:3775
+    at Function.Template._withTemplateInstanceFunc (blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:3744)
+    at Blaze.View.<anonymous> (blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:3774)
+    at blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:2617
+    at Object.Blaze._withCurrentView (blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:2271)
+    at Blaze._DOMRange.<anonymous> (blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:2616)
+    at HTMLFormElement.<anonymous> (blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:863)
+    at HTMLDivElement.dispatch (jquery.js?hash=e5fc9cebb2e37c48ddfaf76e0ab0b77cb6ce6e52:4721)
+checkPass @ main.js:53
+submit form @ main.js:386
+(anonymous) @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:3775
+Template._withTemplateInstanceFunc @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:3744
+(anonymous) @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:3774
+(anonymous) @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:2617
+Blaze._withCurrentView @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:2271
+(anonymous) @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:2616
+(anonymous) @ blaze.js?hash=f33d3dfed63a491d24e3aa07ad66c24b5fe8c761:863
+dispatch @ jquery.js?hash=e5fc9cebb2e37c48ddfaf76e0ab0b77cb6ce6e52:4721
+elemData.handle @ jquery.js?hash=e5fc9cebb2e37c48ddfaf76e0ab0b77cb6ce6e52:4389
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Maui,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Maui,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Oahu,Maui,Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Oahu,Maui,Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Maui,Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Wildfire for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is A Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is A Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is A Drill
+TV.js:32 TV Alert
+TV.js:33 This is A Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Hawaii Island
+Please seek shelter immediately
+Email.js:44 This is Not a Drill
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Maui
+Please seek shelter immediately
+Email.js:44 This is Not a Drill
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Maui
+Please seek shelter immediately
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Maui
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Flooding for the following area(s):
+Maui
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Flooding for the following area(s):
+Maui
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Maui
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Maui
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Flooding for the following area(s):
+Maui
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Maui
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Oahu,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+text.js:25 Text Alert
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Oahu,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Hawaii Island
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Flooding for the following area(s):
+Maui,Kauai
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Maui,Kauai
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Maui,Kauai
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Maui,Kauai
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Wildfire alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Wildfire alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Maui,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+The preceding message, shown again below, was a False Alarm
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Hawaii Island,Kauai
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Flooding alert for the following area(s):
+Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Flooding alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Hawaii Island,Kauai
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Hawaii Island,Kauai
+text.js:25 Text Alert
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Maui,Hawaii Island
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Meteor alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Meteor for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Meteor alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Kauai
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Maui,Hawaii Island
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Earthquake alert for the following area(s):
+Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Earthquake for the following area(s):
+Oahu,Maui,Hawaii Island
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Earthquake alert for the following area(s): 
+ Oahu,Maui,Hawaii Island
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Hurricane alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Hurricane for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Hurricane alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Missile alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Missile for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Missile alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Terrorist Attack alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Terrorist Attack for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Terrorist Attack alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+text.js:25 Text Alert
+Radio.js:26 Radio Alert
+Radio.js:27 This is Not a Drill
+Radio.js:28 There is a Tsunami alert for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
+Siren.js:26 Siren Alert
+Siren.js:27 This is Not a Drill
+Siren.js:28 The Siren ring loudly for Tsunami for the following area(s):
+Oahu,Maui,Hawaii Island,Kauai
+Email.js:44 This is Not a Drill
+TV.js:32 TV Alert
+TV.js:33 This is Not a Drill
+TV.js:34 There is a Tsunami alert for the following area(s): 
+ Oahu,Maui,Hawaii Island,Kauai
+Please seek shelter immediately
